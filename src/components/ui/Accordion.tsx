@@ -1,6 +1,9 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import Image from "next/image";
+import plusSVG from "@/assets/images/svg/acord_plus.svg";
+import minSVG from "@/assets/images/svg/acord_min.svg";
 
 interface AccordionItemProps {
   question: string;
@@ -9,39 +12,48 @@ interface AccordionItemProps {
   onClick: () => void;
 }
 
-function AccordionItem({ question, answer, isOpen, onClick }: AccordionItemProps) {
+function AccordionItem({
+  question,
+  answer,
+  isOpen,
+  onClick,
+}: AccordionItemProps) {
   return (
-    <div className="border-b border-gray-200 last:border-0">
+    <div className="px-8 py-5 bg-[#FCFCFC] my-4 rounded-lg border border-[#F2F2F2]">
       <button
         onClick={onClick}
-        className="flex w-full items-center justify-between py-6 text-left transition-colors group"
+        className="flex w-full items-center justify-between text-left transition-colors group"
       >
-        <span className="text-lg font-semibold text-gray-900 pr-4 group-hover:text-blue-600 transition">
+        <span className="text-xl font-semibold text-gray-900 pr-4 group-hover:text-blue-600 transition">
           {question}
         </span>
-        <svg
-          className={`h-5 w-5 flex-shrink-0 text-gray-500 transition-transform duration-300 ${
-            isOpen ? 'rotate-180' : ''
-          }`}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
+        <span className="rounded-full bg-white shadow-sm p-2 flex items-center justify-center">
+          {isOpen ? (
+            <Image
+              src={minSVG}
+              alt="Collapse"
+              width={24}
+              height={24}
+              className="transition-transform duration-300"
+            />
+          ) : (
+            <Image
+              src={plusSVG}
+              alt="Expand"
+              width={24}
+              height={24}
+              className="transition-transform duration-300"
+            />
+          )}
+        </span>
       </button>
 
       <div
         className={`overflow-hidden transition-all duration-300 ${
-          isOpen ? 'max-h-96 pb-6' : 'max-h-0'
+          isOpen ? "max-h-96 pb-6" : "max-h-0"
         }`}
       >
-        <p className="text-gray-600 leading-relaxed">{answer}</p>
+        <p className="text-gray-600 leading-relaxed mt-4">{answer}</p>
       </div>
     </div>
   );
@@ -55,7 +67,7 @@ export default function Accordion({ items }: AccordionProps) {
   const [openId, setOpenId] = useState<string | null>(items[0]?.id || null);
 
   return (
-    <div>
+    <>
       {items.map((item) => (
         <AccordionItem
           key={item.id}
@@ -65,6 +77,6 @@ export default function Accordion({ items }: AccordionProps) {
           onClick={() => setOpenId(openId === item.id ? null : item.id)}
         />
       ))}
-    </div>
+    </>
   );
 }

@@ -1,15 +1,19 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
+import Home from "@/app/homepage/page";
 
 export default function HomePage() {
   return (
     <>
-      <Header />
+      {/* Hero Section with Background - only on home page */}
+      <div className="relative overflow-hidden">
+        {/* Background Dot Pattern */}
 
-      <main>
-        <Hero />
-      </main>
+        <Header />
+        <main>
+          <Home />
+        </main>
+      </div>
       <Footer />
     </>
   );
