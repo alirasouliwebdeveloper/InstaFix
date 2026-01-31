@@ -9,7 +9,7 @@ export default function NotFound() {
   return (
     <>
       <Header />
-      <main className="relative flex items-center justify-center sm:px-6 px-0 py-20 min-h-[calc(100vh-80px)] mx-auto max-w-screen-xl">
+      <main className="relative flex items-center justify-center mt-20 sm:px-6 px-0 py-20 min-h-[calc(100vh-80px)] mx-auto max-w-screen-xl">
         {/* Background Dots - contained to this section only */}
         <div className="absolute inset-0 -z-10">
           <Image src={DotImage} alt="" fill className="object-cover" priority />

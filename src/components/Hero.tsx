@@ -13,7 +13,7 @@ import DotImage from "@/assets/images/svg/Hero Section Dots.svg";
 
 export default function Hero() {
   return (
-    <section className="relative pt-16 pb-20 md:pt-24 md:pb-32 overflow-hidden">
+    <section className="relative pt-16 pb-20 md:pt-40 md:pb-32 overflow-hidden">
       {/* Background Dots - contained to this section only */}
       <div className="absolute inset-0 -z-10">
         <Image src={DotImage} alt="" fill className="object-cover" priority />
