@@ -1,21 +1,21 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import CTA_Left from "@/assets/images/CTA_Left.png";
 import CTA_Right from "@/assets/images/CTA_Right.png";
 import CTA_Plus from "@/assets/images/CTA_Plus.png";
+import { Section, Container, Flex } from "@/components/ui";
 
 export default function CTA() {
   return (
-    <section className=" py-20 md:py-32">
-      <div className="mx-auto max-w-7xl bg-[#131A2B] rounded-2xl py-7 px-[300px] relative">
+    <Section spacing="xl">
+      <Container className="bg-[#131A2B] rounded-2xl py-7 px-[300px] relative">
         <div className="text-center">
           <Image
             src={CTA_Left}
             alt="CTA Left Decoration"
-            className="absolute bottom-0 left-0 transform translate-x-1/4 -translate-y-4 aspect-auto w-auto "
+            className="absolute bottom-0 left-0 transform translate-x-1/4 -translate-y-4 aspect-auto w-auto"
           />
           <Image
             src={CTA_Right}
@@ -35,16 +35,16 @@ export default function CTA() {
             The right professional for your project is just a few clicks away.
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <Flex align="center" justify="center" gap="md" wrap>
             <Link
-              href="\"
+              href="/"
               className="bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition shadow-lg mb-6"
             >
               Find a Professional
             </Link>
-          </div>
+          </Flex>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }

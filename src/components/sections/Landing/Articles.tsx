@@ -1,13 +1,13 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import { Article as ArticleType } from "@/types";
 import article1 from "@/assets/images/Articles/article_01.png";
 import article2 from "@/assets/images/Articles/article_02.png";
 import article3 from "@/assets/images/Articles/article_03.png";
 import Link from "next/link";
-import arrowSVG from "@/assets/images/svg/arrow-up-right.svg";
+import ArrowIcon from "@/assets/images/svg/arrow-up-right.svg";
+import { Section, Container, SectionTitle, Grid, Flex } from "@/components/ui";
 
 const articles: ArticleType[] = [
   {
@@ -35,31 +35,26 @@ const articles: ArticleType[] = [
 
 export default function Articles() {
   return (
-    <section className="py-16 md:py-24">
-      <div className="mx-auto max-w-7xl">
-        <div className="flex flex-col items-center justify-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold text-colors-primary mb-4">
-            Articles & Guides
-          </h2>
-          <p className="text-lg text-colors-muted">
-            Expert tips, practical guides, and the latest insights on home
-            services.
-          </p>
-        </div>
+    <Section>
+      <Container>
+        <SectionTitle
+          title="Articles & Guides"
+          subtitle="Expert tips, practical guides, and the latest insights on home services."
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <Grid cols={3} gap="md">
           {articles.map((article, index) => (
             <div
               key={index}
               className="bg-[#FCFCFC] rounded-xl overflow-hidden shadow-sm border border-gray-200 px-4 py-6"
             >
-              <div className="flex items-center justify-center">
+              <Flex align="center" justify="center">
                 <Image
                   src={article.image}
                   alt={article.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform rounded-2xl"
                 />
-              </div>
+              </Flex>
 
               <div className="pt-5">
                 <h3 className="text-[20px] font-semibold text-colors-primary mb-4 group-hover:text-blue-600 transition">
@@ -70,20 +65,22 @@ export default function Articles() {
                   {article.excerpt}
                 </p>
 
-                <div className="flex items-center justify-between">
+                <Flex align="center" justify="between">
                   <Link
                     href={article.url}
-                    className="text-blue-600 font-semibold text-sm hover:text-blue-700 flex items-center gap-1"
+                    className="text-blue-600 font-semibold text-sm hover:text-blue-700"
                   >
-                    Read post
-                    <Image src={arrowSVG} alt="arrow" className="w-4 h-4" />
+                    <Flex align="center" gap="sm">
+                      Read post
+                      <ArrowIcon className="w-4 h-4" />
+                    </Flex>
                   </Link>
-                </div>
+                </Flex>
               </div>
             </div>
           ))}
-        </div>
-      </div>
-    </section>
+        </Grid>
+      </Container>
+    </Section>
   );
 }

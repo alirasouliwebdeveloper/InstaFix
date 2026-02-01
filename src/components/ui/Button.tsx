@@ -3,7 +3,7 @@ import Link from "next/link";
 
 interface ButtonProps {
   children: React.ReactNode;
-  variant?: "primary" | "secondary" | "outline";
+  variant?: "primary" | "secondary" | "outline" | "none";
   size?: "sm" | "md" | "lg";
   href?: string;
   onClick?: () => void;
@@ -31,6 +31,7 @@ export default function Button({
     secondary: "bg-slate-100 text-slate-900 hover:bg-slate-200",
     outline:
       "border border-black/10 bg-white text-black/75 hover:bg-black/[0.03]",
+    none: "",
   };
 
   const sizes = {

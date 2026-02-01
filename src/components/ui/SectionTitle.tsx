@@ -1,29 +1,29 @@
-import React from 'react';
-
 interface SectionTitleProps {
   title: string;
   subtitle?: string;
-  align?: 'left' | 'center';
+  align?: "left" | "center" | "right";
   className?: string;
 }
+
+const alignClasses = {
+  left: "text-left",
+  center: "text-center",
+  right: "text-right",
+};
 
 export default function SectionTitle({
   title,
   subtitle,
-  align = 'center',
-  className = '',
+  align = "center",
+  className = "",
 }: SectionTitleProps) {
-  const alignClass = align === 'center' ? 'text-center' : 'text-left';
-
   return (
-    <div className={`${alignClass} ${className}`}>
-      <h2 className="text-[32px] md:text-[40px] font-semibold leading-tight tracking-tight text-black">
+    <div className={`mb-12 ${alignClasses[align]} ${className}`}>
+      <h2 className="text-3xl md:text-5xl font-semibold text-colors-primary mb-4">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-3 text-[15px] leading-7 text-black/60 max-w-2xl mx-auto">
-          {subtitle}
-        </p>
+        <p className="text-lg text-colors-secondary">{subtitle}</p>
       )}
     </div>
   );

@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/assets/images/logo.png";
-import X from "@/assets/images/svg/Socials/X.svg";
-import Instagram from "@/assets/images/svg/Socials/Instagram.svg";
-import LinkedIn from "@/assets/images/svg/Socials/LinkedIn.svg";
-import YouTube from "@/assets/images/svg/Socials/youtube-color 1.svg";
-import Tiktok from "@/assets/images/svg/Socials/tiktok.svg";
+import XIcon from "@/assets/images/svg/Socials/X.svg";
+import InstagramIcon from "@/assets/images/svg/Socials/Instagram.svg";
+import LinkedInIcon from "@/assets/images/svg/Socials/LinkedIn.svg";
+import YouTubeIcon from "@/assets/images/svg/Socials/youtube-color 1.svg";
+import TiktokIcon from "@/assets/images/svg/Socials/tiktok.svg";
 import SocialIcons from "@/components/ui/SocialIcons";
+import { FC, SVGProps } from "react";
 
 const footerLinks = {
   Services: [
@@ -35,12 +36,17 @@ const footerLinks = {
   ],
 };
 
-const socialLinks = [
-  { icon: Tiktok, url: "#" },
-  { icon: LinkedIn, url: "#" },
-  { icon: X, url: "#" },
-  { icon: Instagram, url: "#" },
-  { icon: YouTube, url: "#" },
+interface SocialLink {
+  Icon: FC<SVGProps<SVGSVGElement>>;
+  url: string;
+}
+
+const socialLinks: SocialLink[] = [
+  { Icon: TiktokIcon, url: "#" },
+  { Icon: LinkedInIcon, url: "#" },
+  { Icon: XIcon, url: "#" },
+  { Icon: InstagramIcon, url: "#" },
+  { Icon: YouTubeIcon, url: "#" },
 ];
 
 export default function Footer() {
@@ -118,16 +124,11 @@ export default function Footer() {
             <div className="flex gap-6">
               {/* Social Links */}
               <div className="flex gap-4">
-                {socialLinks &&
-                  socialLinks.map((social, index) => (
-                    <SocialIcons href={social.url} key={index}>
-                      <Image
-                        src={social.icon}
-                        alt="social-icon"
-                        className="w-6 h-6"
-                      />
-                    </SocialIcons>
-                  ))}
+                {socialLinks.map((social, index) => (
+                  <SocialIcons href={social.url} key={index}>
+                    <social.Icon className="w-6 h-6" />
+                  </SocialIcons>
+                ))}
               </div>
             </div>
           </div>

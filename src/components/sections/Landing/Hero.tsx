@@ -3,10 +3,10 @@
 import Image from "next/image";
 import heroImage from "@/assets/images/hero section.png";
 import SearchSVGIcon from "@/assets/images/svg/search-normal.svg";
-import starSVG from "@/assets/images/svg/star-hero.svg";
+import StarSVG from "@/assets/images/svg/star-hero.svg";
 import usersImage from "@/assets/images/users.png";
-import tickSVG from "@/assets/images/svg/tick.svg";
-import assistant from "@/assets/images/svg/assistant.svg";
+import TickSVG from "@/assets/images/svg/tick.svg";
+import AssistantIcon from "@/assets/images/svg/assistant.svg";
 import Card from "@/components/ui/Card";
 import Link from "next/link";
 import DotImage from "@/assets/images/svg/Hero Section Dots.svg";
@@ -16,7 +16,7 @@ export default function Hero() {
     <section className="relative pt-16 pb-20 md:pt-40 md:pb-32 overflow-hidden">
       {/* Background Dots - contained to this section only */}
       <div className="absolute inset-0 -z-10">
-        <Image src={DotImage} alt="" fill className="object-cover" priority />
+        <DotImage className="w-full h-full object-cover" />
         {/* Vertical Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-white" />
       </div>
@@ -30,7 +30,7 @@ export default function Hero() {
             >
               <div className="flex items-center gap-2 mb-2">
                 <div className="h-8 w-8 rounded-full bg-orange-300 flex items-center justify-center">
-                  <Image src={starSVG} alt="star-icon" width={12} height={12} />
+                  <StarSVG className="w-3 h-3" />
                 </div>
                 <span className="font-bold text-md">4.8</span>
                 <span className="text-xs"> Rating</span>
@@ -57,13 +57,7 @@ export default function Hero() {
               >
                 Find a Professional
                 <div className="h-5 w-5 flex items-center justify-center">
-                  <Image
-                    src={SearchSVGIcon}
-                    alt="search"
-                    className="ml-3"
-                    width={24}
-                    height={24}
-                  />
+                  <SearchSVGIcon className="ml-3 w-6 h-6" />
                 </div>
               </Link>
               <Link
@@ -106,12 +100,7 @@ export default function Hero() {
               >
                 <div className="flex items-center gap-2 mb-2">
                   <div className="h-8 w-8 rounded-full bg-background-tick flex items-center justify-center">
-                    <Image
-                      src={tickSVG}
-                      alt="star-icon"
-                      width={20}
-                      height={20}
-                    />
+                    <TickSVG className="w-5 h-5" />
                   </div>
                   <span className="font-bold text-md"> Job Completed</span>
                 </div>
@@ -120,7 +109,7 @@ export default function Hero() {
             </div>
             <div className="absolute bg-white rounded-full w-14 h-14 p-2 right-[10px] bottom-[10px]">
               <a href="#assistant">
-                <Image src={assistant} alt="assistant" />
+                <AssistantIcon className="w-full h-full" />
               </a>
             </div>
           </div>
