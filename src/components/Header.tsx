@@ -11,6 +11,7 @@ const nav = [
   { label: "Pricing", href: "#pricing" },
   { label: "About us", href: "/about-us" },
   { label: "Contact us", href: "/contact-us" },
+  { label: "Privacy", href: "/privacy" },
 ];
 
 export default function Header() {
