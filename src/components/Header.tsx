@@ -6,7 +6,7 @@ import logo from "@/assets/images/logo.png";
 import Image from "next/image";
 
 const nav = [
-  { label: "Services", href: "#services" },
+  { label: "Services", href: "/services" },
   { label: "How it works", href: "#how" },
   { label: "Pricing", href: "#pricing" },
   { label: "About us", href: "/about-us" },
