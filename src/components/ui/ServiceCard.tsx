@@ -1,15 +1,15 @@
 import Link from "next/link";
-import CheckIcon from "@/assets/images/svg/services/check.svg";
-import RightArrowIcon from "@/assets/images/svg/services/right-arrow.svg";
+import { CheckSimpleIcon, ArrowRightIcon } from "@/components/icons";
+import { IconProps } from "@/components/icons";
 import IconBox from "./IconBox";
 import Badge from "./Badge";
 import Flex from "./Flex";
-import { FC, SVGProps } from "react";
+import { FC } from "react";
 
 interface ServiceCardProps {
   title: string;
   description: string;
-  Icon: FC<SVGProps<SVGSVGElement>>;
+  Icon: FC<IconProps>;
   price: string;
   categories: string[];
   url: string;
@@ -29,7 +29,7 @@ export default function ServiceCard({
     <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-blue-300 transition group">
       <Flex align="center" justify="between" className="mb-6">
         <IconBox size="lg" variant="rounded" bgColor={color}>
-          <Icon className="w-7 h-7" />
+          <Icon size="xl" />
         </IconBox>
         <span className="text-xl font-semibold text-colors-primary">
           {price}
@@ -41,7 +41,7 @@ export default function ServiceCard({
       <p className="text-sm text-colors-muted mb-6">{description}</p>
 
       <Flex align="center" gap="sm" className="mb-3">
-        <CheckIcon className="w-4 h-4" />
+        <CheckSimpleIcon size="sm" className="text-blue-600" />
         <p className="text-xs font-semibold text-colors-primary">
           Common Services:
         </p>
@@ -59,7 +59,7 @@ export default function ServiceCard({
       >
         <Flex align="center" gap="sm" className="group-hover:gap-3 transition-all">
           Learn more
-          <RightArrowIcon className="w-4 h-4" />
+          <ArrowRightIcon size="sm" />
         </Flex>
       </Link>
     </div>

@@ -19,10 +19,10 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="absolute top-0 left-0 right-0 pt-5 z-50 bg-transparent">
+    <header className="absolute top-0 left-0 right-0 pt-3 md:pt-5 z-50 bg-transparent px-4 md:px-0">
       <div
-        className="mx-auto flex h-[72px] max-w-7xl items-center justify-between p-4
-      bg-background-header border border-[#F2F2F2] rounded-2xl"
+        className="mx-auto flex h-14 md:h-[72px] max-w-7xl items-center justify-between px-3 md:p-4
+      bg-background-header border border-[#F2F2F2] rounded-xl md:rounded-2xl"
       >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-4">
@@ -43,12 +43,12 @@ export default function Header() {
         </nav>
 
         {/* Right Actions */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 md:gap-4">
           <Link
             href="/login"
-            className="hidden md:inline-flex text-[15px] font-medium text-gray-700 hover:text-gray-900
+            className="hidden md:inline-flex text-sm md:text-[15px] font-medium text-gray-700 hover:text-gray-900
             transition
-            bg-[#F5F5F5] px-6 py-3 rounded-lg"
+            bg-[#F5F5F5] px-4 md:px-6 py-2 md:py-3 rounded-lg"
           >
             Log In
           </Link>
@@ -56,7 +56,7 @@ export default function Header() {
           <Link
             href="/login"
             className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-btn-primary-from to-btn-primary-to
-             px-6 py-3 text-[15px] font-semibold text-white hover:from-btn-primary-from hover:to-btn-primary-to transition"
+             px-3 md:px-6 py-2 md:py-3 text-xs md:text-[15px] font-semibold text-white hover:from-btn-primary-from hover:to-btn-primary-to transition"
           >
             Get Started
           </Link>

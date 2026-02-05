@@ -10,35 +10,35 @@ import { Section, Container, Flex } from "@/components/ui";
 export default function CTA() {
   return (
     <Section spacing="xl">
-      <Container className="bg-[#131A2B] rounded-2xl py-7 px-[300px] relative">
-        <div className="text-center">
+      <Container className="bg-[#131A2B] rounded-2xl py-10 md:py-16 px-6 sm:px-10 md:px-20 lg:px-40 xl:px-60 relative overflow-hidden">
+        <div className="text-center relative z-10">
           <Image
             src={CTA_Left}
             alt="CTA Left Decoration"
-            className="absolute bottom-0 left-0 transform translate-x-1/4 -translate-y-4 aspect-auto w-auto"
+            className="hidden md:block absolute bottom-0 left-0 transform translate-x-1/4 -translate-y-4 aspect-auto w-auto"
           />
           <Image
             src={CTA_Right}
             alt="CTA Right Decoration"
-            className="absolute right-0 top-1/3 transform -translate-x-1/4 -translate-y-2/4 w-auto"
+            className="hidden md:block absolute right-0 top-1/3 transform -translate-x-1/4 -translate-y-2/4 w-auto"
           />
           <Image
             src={CTA_Plus}
             alt="CTA Plus Decoration"
-            className="absolute bottom-0 right-4 w-auto transform translate-y-1/2 -translate-x-8"
+            className="hidden md:block absolute bottom-0 right-4 w-auto transform translate-y-1/2 -translate-x-8"
           />
-          <h2 className="text-[80px] font-bold text-white mb-8 tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[80px] font-bold text-white mb-6 md:mb-8 tracking-tight leading-tight">
             READY TO GET STARTED?
           </h2>
 
-          <p className="text-lg md:text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-300 mb-8 md:mb-10 max-w-2xl mx-auto">
             The right professional for your project is just a few clicks away.
           </p>
 
           <Flex align="center" justify="center" gap="md" wrap>
             <Link
               href="/"
-              className="bg-white text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition shadow-lg mb-6"
+              className="bg-white text-gray-900 px-6 md:px-8 py-3 md:py-4 rounded-lg font-semibold text-base md:text-lg hover:bg-gray-100 transition shadow-lg mb-4 md:mb-6"
             >
               Find a Professional
             </Link>

@@ -6,7 +6,7 @@ import article1 from "@/assets/images/Articles/article_01.png";
 import article2 from "@/assets/images/Articles/article_02.png";
 import article3 from "@/assets/images/Articles/article_03.png";
 import Link from "next/link";
-import ArrowIcon from "@/assets/images/svg/arrow-up-right.svg";
+import { ArrowUpRightIcon } from "@/components/icons";
 import { Section, Container, SectionTitle, Grid, Flex } from "@/components/ui";
 
 const articles: ArticleType[] = [
@@ -56,12 +56,12 @@ export default function Articles() {
                 />
               </Flex>
 
-              <div className="pt-5">
-                <h3 className="text-[20px] font-semibold text-colors-primary mb-4 group-hover:text-blue-600 transition">
+              <div className="pt-4 md:pt-5">
+                <h3 className="text-base md:text-lg lg:text-[20px] font-semibold text-colors-primary mb-3 md:mb-4 group-hover:text-blue-600 transition">
                   {article.title}
                 </h3>
 
-                <p className="text-colors-muted mb-4 line-clamp-2">
+                <p className="text-sm md:text-base text-colors-muted mb-3 md:mb-4 line-clamp-2">
                   {article.excerpt}
                 </p>
 
@@ -72,7 +72,7 @@ export default function Articles() {
                   >
                     <Flex align="center" gap="sm">
                       Read post
-                      <ArrowIcon className="w-4 h-4" />
+                      <ArrowUpRightIcon size="sm" />
                     </Flex>
                   </Link>
                 </Flex>

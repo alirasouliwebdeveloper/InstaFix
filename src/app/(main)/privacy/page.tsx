@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Button, Container, Flex, IconBox } from "@/components/ui";
-import VerifyIcon from "@/assets/images/svg/01.svg";
+import { Button, Container, Flex } from "@/components/ui";
+import { ShieldCheckIcon } from "@/components/icons";
 import Accordion from "@/components/ui/Accordion";
 
 const sections = [
@@ -53,7 +53,7 @@ export default function Privacy() {
   };
 
   return (
-    <Container size="xl" className="pt-16 pb-20 mt-32" bgColor="#F7FAFF">
+    <Container size="xl" className="pt-8 md:pt-16 pb-12 md:pb-20 mt-24 md:mt-32" bgColor="#F7FAFF">
       <Flex
         direction="col"
         mdDirection="row"
@@ -87,7 +87,7 @@ export default function Privacy() {
             justify="center"
             align="start"
             gap="md"
-            className="bg-[#F3F6F9] rounded-md p-6 mr-14"
+            className="bg-[#F3F6F9] rounded-md p-4 md:p-6 mr-0 md:mr-14"
           >
             <h4 className="text-[14px]">Need help?</h4>
             <p className="text-[13px] text-colors-muted">
@@ -107,7 +107,7 @@ export default function Privacy() {
 
         {/* Right Content */}
         <div className="w-full md:w-3/4">
-          <h1 className="text-5xl font-semibold text-[#0B2140] mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#0B2140] mb-4 md:mb-6">
             Privacy Policy
           </h1>
           <p className="text-colors-muted text-sm leading-relaxed mb-12">
@@ -194,14 +194,7 @@ export default function Privacy() {
               gap="md"
               className="p-6 bg-gradient-to-r from-[#3B82F6] to-[#2563EB] rounded-xl"
             >
-              {/* <IconBox size="md" className="mb-4" bgColor=""> */}
-              <VerifyIcon
-                className="mr-1 text-white"
-                // color="#ffffff"
-                width={40}
-                height={40}
-              />
-              {/* </IconBox> */}
+              <ShieldCheckIcon size={40} className="mr-1 text-white shrink-0" />
               <Flex direction="col" align="start" justify="center" gap="md">
                 <h3 className="text-white font-normal text-base">
                   Your Data Security

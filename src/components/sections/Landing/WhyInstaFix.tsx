@@ -2,16 +2,15 @@
 
 import Image from "next/image";
 import white_man_hat from "@/assets/images/white-man-hat.png";
-import WhyIcon from "@/assets/images/svg/why/why.svg";
-import LocationIcon from "@/assets/images/svg/why/location.svg";
-import SecureIcon from "@/assets/images/svg/why/secure.svg";
+import { ShieldCheckIcon, LocationIcon, LockIcon } from "@/components/icons";
+import { IconProps } from "@/components/icons";
 import { Section, Container, Grid, Flex, IconBox, Button } from "@/components/ui";
-import { FC, SVGProps } from "react";
+import { FC } from "react";
 
 interface WhyItem {
   title: string;
   description: string;
-  Icon: FC<SVGProps<SVGSVGElement>>;
+  Icon: FC<IconProps>;
 }
 
 const whyInstaFixItems: WhyItem[] = [
@@ -19,7 +18,7 @@ const whyInstaFixItems: WhyItem[] = [
     title: "Verified Professionals",
     description:
       "All Professionals are background-checked and certified for your .",
-    Icon: WhyIcon,
+    Icon: ShieldCheckIcon,
   },
   {
     title: "Local Services",
@@ -31,7 +30,7 @@ const whyInstaFixItems: WhyItem[] = [
     title: "Secured Payments",
     description:
       "Your payment is held securely until the job is completed to .",
-    Icon: SecureIcon,
+    Icon: LockIcon,
   },
 ];
 
@@ -59,12 +58,12 @@ export default function WhyInstaFix() {
           </div>
 
           {/* Right Content */}
-          <div>
-            <h2 className="text-5xl font-semibold text-colors-primary mb-4">
+          <div className="mt-8 md:mt-0">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-colors-primary mb-3 md:mb-4">
               Why InstaFix?
             </h2>
 
-            <p className="text-lg text-colors-muted mb-8">
+            <p className="text-base md:text-lg text-colors-muted mb-6 md:mb-8">
               We make finding and booking trusted home service professionals
               simple, fast, and reliable.
             </p>
@@ -72,7 +71,7 @@ export default function WhyInstaFix() {
             {whyInstaFixItems.map((why, index) => (
               <Flex key={index} align="start" gap="lg" className="mb-4">
                 <IconBox size="md" variant="rounded" bgColor="#EFF6FF">
-                  <why.Icon className="w-5 h-5" />
+                  <why.Icon size="md" className="text-[#2563EB]" />
                 </IconBox>
                 <Flex direction="col">
                   <h3 className="text-lg font-bold text-colors-primary mb-2">

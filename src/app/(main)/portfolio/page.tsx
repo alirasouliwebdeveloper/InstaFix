@@ -1,7 +1,6 @@
 import Image from "next/image";
 import {Button, Container, Grid} from "@/components/ui";
-import LocationIcon from "@/assets/images/svg/location-gray.svg";
-import VerifySVG from "@/assets/images/svg/verify-badge.svg";
+import { LocationIcon, BadgeCheckIcon } from "@/components/icons";
 
 // Placeholder project images - replace with actual images
 import Avatar1 from "@/assets/images/avatarImages/Avatar_Image_1.png";
@@ -248,7 +247,7 @@ export default function Portfolio() {
 										{project.title}
 									</h3>
 									<div className="flex items-center gap-1 pb-5 mb-5 sm:mb-5 border-b border-gray-200">
-										<LocationIcon className="w-4 h-4 text-colors-muted flex-shrink-0"/>
+										<LocationIcon size="sm" className="text-colors-muted flex-shrink-0"/>
 										<span className="text-xs sm:text-sm text-colors-muted truncate">
 											{project.location}
 										</span>
@@ -287,13 +286,13 @@ export default function Portfolio() {
 										/>
 										<span className="flex items-center gap-1 text-xs sm:text-sm text-[#0B1B2B] truncate">
 											{project.contractor.name}
-											<VerifySVG className="ml-3 w-4 h-4" />
+											<BadgeCheckIcon size="sm" className="ml-3 text-[#0072C6]" />
 										</span>
 									</div>
 
 									{/* Buttons */}
 									<div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-										<Button variant="primary" size="sm" className="flex-1 text-xs sm:text-sm">
+										<Button href={`/portfolio/${project.id}/`} variant="primary" size="sm" className="flex-1 text-xs sm:text-sm">
 											View Details
 										</Button>
 										<Button variant="outline" size="sm" className="flex-1 text-xs sm:text-sm">

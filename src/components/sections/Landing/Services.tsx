@@ -1,25 +1,29 @@
 "use client";
 
-import HomeIcon from "@/assets/images/svg/services/home.svg";
-import ThunderIcon from "@/assets/images/svg/services/thunder.svg";
-import HandymanIcon from "@/assets/images/svg/services/handyman.svg";
-import HvacIcon from "@/assets/images/svg/services/hvac.svg";
-import SpecialStarIcon from "@/assets/images/svg/services/special_star.svg";
-import WaterIcon from "@/assets/images/svg/services/water.svg";
+import {
+  HomeIcon,
+  ThunderIcon,
+  WaterIcon,
+  ThermometerIcon,
+  SparkleIcon,
+  ToolsIcon,
+} from "@/components/icons";
+import { IconProps } from "@/components/icons";
 import Section from "@/components/ui/Section";
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
 import Grid from "@/components/ui/Grid";
 import ServiceCard from "@/components/ui/ServiceCard";
-import { FC, SVGProps } from "react";
+import { FC } from "react";
 
 interface ServiceItem {
   title: string;
-  Icon: FC<SVGProps<SVGSVGElement>>;
+  Icon: FC<IconProps>;
   description: string;
   price: string;
   categories: string[];
   color: string;
+  iconColor: string;
   url: string;
 }
 
@@ -32,6 +36,7 @@ const services: ServiceItem[] = [
     price: "20$/H",
     categories: ["Development", "Flooring", "+3 more"],
     color: "#eff6ff",
+    iconColor: "#2563EB",
     url: "/",
   },
   {
@@ -42,6 +47,7 @@ const services: ServiceItem[] = [
     price: "18$/H",
     categories: ["Wiring", "Panel Upgrade", "+3 more"],
     color: "#fef9c3",
+    iconColor: "#CA8A04",
     url: "/",
   },
   {
@@ -52,36 +58,40 @@ const services: ServiceItem[] = [
     price: "45$/H",
     categories: ["Leaks", "Install", "+3 more"],
     color: "#dbeafe",
+    iconColor: "#2563EB",
     url: "/",
   },
   {
     title: "HVAC",
-    Icon: HvacIcon,
+    Icon: ThermometerIcon,
     description:
       "Heating, cooling, and ventilation systems maintenance and repair.",
     price: "45$/H",
     categories: ["Leaks", "Install", "+3 more"],
     color: "#FAE8FF",
+    iconColor: "#C026D3",
     url: "/",
   },
   {
     title: "Cleaning",
-    Icon: SpecialStarIcon,
+    Icon: SparkleIcon,
     description:
       "Home, apartment, and office cleaning services for a spotless space.",
     price: "35$/H",
     categories: ["Leaks", "Install", "+3 more"],
     color: "#ECFCCB",
+    iconColor: "#65A30D",
     url: "/",
   },
   {
     title: "Handyman",
-    Icon: HandymanIcon,
+    Icon: ToolsIcon,
     description:
       "Small repairs, installations, and everyday fixes around the house.",
     price: "45$/H",
     categories: ["Leaks", "Install", "+3 more"],
     color: "#FFEDD5",
+    iconColor: "#EA580C",
     url: "/",
   },
 ];
@@ -100,7 +110,7 @@ export default function Services() {
               key={index}
               title={service.title}
               description={service.description}
-              Icon={service.Icon}
+              Icon={(props) => <service.Icon {...props} className={`text-[${service.iconColor}]`} style={{ color: service.iconColor }} />}
               price={service.price}
               categories={service.categories}
               url={service.url}

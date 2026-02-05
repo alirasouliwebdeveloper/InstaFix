@@ -73,8 +73,8 @@ export default function Testimonials() {
         />
 
         <Swiper
-          slidesPerView={4}
-          spaceBetween={30}
+          slidesPerView={1}
+          spaceBetween={20}
           grabCursor={true}
           centeredSlides={true}
           autoplay={{
@@ -83,6 +83,20 @@ export default function Testimonials() {
           }}
           pagination={{
             clickable: true,
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1280: {
+              slidesPerView: 4,
+              spaceBetween: 30,
+            },
           }}
           modules={[Pagination]}
           className="mb-12 mySwiper"

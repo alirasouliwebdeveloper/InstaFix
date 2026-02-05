@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import PlusIcon from "@/assets/images/svg/acord_plus.svg";
-import MinIcon from "@/assets/images/svg/acord_min.svg";
+import { PlusIcon, MinusIcon } from "@/components/icons";
 import Flex from "./Flex";
 
 interface AccordionItemProps {
@@ -34,9 +33,9 @@ function AccordionItem({
             className="rounded-full bg-white shadow-sm p-2"
           >
             {isOpen ? (
-              <MinIcon className="w-6 h-6 transition-transform duration-300" />
+              <MinusIcon size="lg" className="text-blue-600 transition-transform duration-300" />
             ) : (
-              <PlusIcon className="w-6 h-6 transition-transform duration-300" />
+              <PlusIcon size="lg" className="text-blue-600 transition-transform duration-300" />
             )}
           </Flex>
         </Flex>

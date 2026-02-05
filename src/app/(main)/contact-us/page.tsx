@@ -1,12 +1,11 @@
-import EmailIcon from "@/assets/images/svg/contactus/email.svg";
-import QuestionIcon from "@/assets/images/svg/contactus/question.svg";
-import TalkIcon from "@/assets/images/svg/contactus/talk.svg";
+import { EmailIcon, MessageIcon, QuestionIcon } from "@/components/icons";
+import { IconProps } from "@/components/icons";
 import { Button, Container, Flex, IconBox } from "@/components/ui";
 import { FormGroup, Input, Label, Select, Textarea } from "@/components/form";
-import { FC, SVGProps } from "react";
+import { FC } from "react";
 
 interface CartProps {
-  Icon: FC<SVGProps<SVGSVGElement>>;
+  Icon: FC<IconProps>;
   title: string;
   description: string;
   textLink: string;
@@ -22,7 +21,7 @@ const cartsData: CartProps[] = [
     url: "/",
   },
   {
-    Icon: TalkIcon,
+    Icon: MessageIcon,
     title: "Live Chat",
     description: "Available Mon-Fri, 9am - 5pm EST.",
     textLink: "Start a chat",
@@ -53,7 +52,7 @@ const CustomCart = ({ Icon, title, description, url, textLink }: CartProps) => {
       className="border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition p-6"
     >
       <IconBox size="sm" variant="rounded" bgColor="#FFB020">
-        <Icon className="w-5 h-5" />
+        <Icon size="md" className="text-white" />
       </IconBox>
       <Flex direction="col" align="start" gap="sm">
         <h3 className="text-base text-colors-primary font-semibold">{title}</h3>
@@ -75,9 +74,9 @@ export default function ContactPage() {
       className="pt-16 pb-20 mt-20"
     >
       <Flex direction="col" lgDirection="row" align="start" justify="between" gap="2xl">
-        <Flex direction="col" gap="lg" className="w-1/2 md:w-full mb-8">
+        <Flex direction="col" gap="lg" className="w-full lg:w-1/2 mb-8">
           <span className="text-sm text-[#0066CC]">Support</span>
-          <h1 className="text-4xl font-bold text-title">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-title">
             Get in touch with our team
           </h1>
           <p className="text-base text-colors-muted mb-8">
@@ -95,7 +94,7 @@ export default function ContactPage() {
             />
           ))}
         </Flex>
-        <div className="w-1/2 md:w-full p-12 bg-[#E6F0FF] rounded-xl">
+        <div className="w-full lg:w-1/2 p-6 sm:p-8 md:p-12 bg-[#E6F0FF] rounded-xl">
           <p className="text-xl font-semibold text-colors-primary mb-6">
             Send us a message
           </p>

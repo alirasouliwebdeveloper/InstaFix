@@ -1,42 +1,47 @@
 import {Button, Container, Flex, Grid, IconBox} from "@/components/ui";
+import {
+	CheckCircleIcon,
+	ClockIcon,
+	LocationIcon,
+	WaterIcon,
+	TrashIcon,
+	ThunderIcon,
+	ToolsIcon,
+	DangerIcon,
+	ShieldCheckIcon,
+	VerifiedIcon,
+} from "@/components/icons";
+import { IconProps } from "@/components/icons";
+import { FC } from "react";
+
+// Keep complex decorated stat card SVGs as images
 import happyClientSVG from "@/assets/images/svg/servicesPage/happy_clients.svg";
 import projectsCompletedSVG from "@/assets/images/svg/servicesPage/projects_completed.svg";
 import yearsOfExpSVG from "@/assets/images/svg/servicesPage/years_of_experience.svg";
 import clientSatisSVG from "@/assets/images/svg/servicesPage/client_satisfaction.svg";
-import LocationSVg from "@/assets/images/svg/servicesPage/location.svg";
-import CheckedSVG from "@/assets/images/svg/servicesPage/checked.svg";
-import TimeSVG from "@/assets/images/svg/servicesPage/time.svg";
-import WaterIcon from "@/assets/images/svg/services/water.svg";
-import VerifyIcon from "@/assets/images/svg/01.svg";
-import SecureIcon from "@/assets/images/svg/why/secure.svg";
-import CheckIcon from "@/assets/images/svg/services/check.svg";
-import BinSVG from "@/assets/images/svg/servicesPage/plumpingService/bin.svg";
-import CheckSVG from "@/assets/images/svg/servicesPage/plumpingService/check.svg";
-import ClockSVG from "@/assets/images/svg/servicesPage/plumpingService/clock.svg";
-import DangerSVG from "@/assets/images/svg/servicesPage/plumpingService/danger.svg";
-import ThunderSVG from "@/assets/images/svg/servicesPage/plumpingService/thunder.svg";
-import ToolsSVG from "@/assets/images/svg/servicesPage/plumpingService/tools.svg";
-import WaterSVG from "@/assets/images/svg/servicesPage/plumpingService/water.svg";
-// Shy section Icons
-import WhyClockSVG from "@/assets/images/svg/servicesPage/WhyClock.svg";
-import WhyMarmolakSVG from "@/assets/images/svg/servicesPage/WhyMarmolak.svg";
-import WhySeparSVG from "@/assets/images/svg/servicesPage/WhySepar.svg";
-import WhyTomarSVG from "@/assets/images/svg/servicesPage/WhyTomar.svg";
 
-// Icons for services - using water icon as placeholder
-const services = [
+interface ServiceFeature {
+	Icon: FC<IconProps>;
+	title: string;
+}
+
+interface Service {
+	id: number;
+	title: string;
+	features: ServiceFeature[];
+	priceRange: string;
+	iconColor: string;
+	bgColor: string;
+}
+
+// Icons for services
+const services: Service[] = [
 	{
 		id: 1,
 		title: "Leak Detection & Repair",
 		features: [
-			{
-				Icon: ClockSVG,
-				title: "1-2 hours",
-			},
-			{
-				Icon: ToolsSVG,
-				title: "emergency service",
-			},
+			{ Icon: ClockIcon, title: "1-2 hours" },
+			{ Icon: ToolsIcon, title: "emergency service" },
 		],
 		priceRange: "$100 - $300",
 		iconColor: "#0077CC",
@@ -46,14 +51,8 @@ const services = [
 		id: 2,
 		title: "Drain Cleaning",
 		features: [
-			{
-				Icon: ClockSVG,
-				title: "1-3 hours",
-			},
-			{
-				Icon: CheckSVG,
-				title: "Clog removal",
-			},
+			{ Icon: ClockIcon, title: "1-3 hours" },
+			{ Icon: CheckCircleIcon, title: "Clog removal" },
 		],
 		priceRange: "$100 - $300",
 		iconColor: "#0077CC",
@@ -63,14 +62,8 @@ const services = [
 		id: 3,
 		title: "Water Heater Install",
 		features: [
-			{
-				Icon: ClockSVG,
-				title: "3-5 hours",
-			},
-			{
-				Icon: ThunderSVG,
-				title: "Gas or Electric",
-			},
+			{ Icon: ClockIcon, title: "3-5 hours" },
+			{ Icon: ThunderIcon, title: "Gas or Electric" },
 		],
 		priceRange: "$300 - $1,500",
 		iconColor: "#0077CC",
@@ -80,14 +73,8 @@ const services = [
 		id: 4,
 		title: "Toilet Repair / Install",
 		features: [
-			{
-				Icon: ClockSVG,
-				title: "2-3 hours",
-			},
-			{
-				Icon: BinSVG,
-				title: "Disposal option",
-			},
+			{ Icon: ClockIcon, title: "2-3 hours" },
+			{ Icon: TrashIcon, title: "Disposal option" },
 		],
 		priceRange: "$150 - $500",
 		iconColor: "#0077CC",
@@ -97,14 +84,8 @@ const services = [
 		id: 5,
 		title: "Faucet & Sink Repair",
 		features: [
-			{
-				Icon: ClockSVG,
-				title: "1-2 hours",
-			},
-			{
-				Icon: WaterSVG,
-				title: "Leak fix",
-			},
+			{ Icon: ClockIcon, title: "1-2 hours" },
+			{ Icon: WaterIcon, title: "Leak fix" },
 		],
 		priceRange: "$80 - $250",
 		iconColor: "#0077CC",
@@ -114,14 +95,8 @@ const services = [
 		id: 6,
 		title: "Frozen Pipe Thawing",
 		features: [
-			{
-				Icon: ClockSVG,
-				title: "2-4 hours",
-			},
-			{
-				Icon: DangerSVG,
-				title: "Emergency",
-			},
+			{ Icon: ClockIcon, title: "2-4 hours" },
+			{ Icon: DangerIcon, title: "Emergency" },
 		],
 		priceRange: "$150 - $400",
 		iconColor: "#0077CC",
@@ -135,28 +110,28 @@ const features = [
 		title: "Winter-Ready Expertise",
 		description:
 			"Our professionals specialize in handling frozen pipes, winter heating issues, and other cold-weather challenges unique to Alberta's harsh climate.",
-		Icon: WhyMarmolakSVG,
+		Icon: ShieldCheckIcon,
 	},
 	{
 		id: 2,
 		title: "Code Compliance",
 		description:
 			"All work is performed to provincial certification and regulation requirements. We ensure your plumbing meets all local codes.",
-		Icon: WhyTomarSVG,
+		Icon: VerifiedIcon,
 	},
 	{
 		id: 3,
 		title: "Verified Insurance",
 		description:
 			"Every professional on our platform carries liability insurance, giving you peace of mind and protection for your property.",
-		Icon: WhySeparSVG,
+		Icon: ShieldCheckIcon,
 	},
 	{
 		id: 4,
 		title: "24/7 Emergency Response",
 		description:
 			"Plumbing emergencies don't wait for business hours. Find pros for burst pipes, flooding, and other emergencies any time.",
-		Icon: WhyClockSVG
+		Icon: ClockIcon,
 	},
 ];
 
@@ -190,16 +165,9 @@ const costGuideData = [
 ];
 
 const trustItems = [
-	{
-		title: "Licensed & insured",
-		Icon: CheckedSVG
-	}, {
-		title: "Same-day service available",
-		Icon: TimeSVG
-	}, {
-		title: "Local professionals",
-		Icon: LocationSVg
-	},
+	{ title: "Licensed & insured", Icon: CheckCircleIcon },
+	{ title: "Same-day service available", Icon: ClockIcon },
+	{ title: "Local professionals", Icon: LocationIcon },
 ];
 
 const clientFeatures = [
@@ -217,7 +185,7 @@ export default function Services() {
 	return (
 		<>
 			{/* Hero Section */}
-			<section className="bg-[#F1F4F6] pt-32 pb-16">
+			<section className="bg-[#F1F4F6] pt-24 md:pt-32 pb-12 md:pb-16">
 				<Container size="xl">
 					<Flex
 						direction="col"
@@ -231,10 +199,10 @@ export default function Services() {
 							<p className="text-[#0077CC] text-xs font-bold uppercase tracking-wide mb-4">
 								HOME SERVICES / PLUMBING
 							</p>
-							<h1 className="text-4xl md:text-5xl font-semibold text-[#0B1B2B] mb-6 leading-tight">
+							<h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#0B1B2B] mb-4 md:mb-6 leading-tight">
 								Expert Plumbing Services in Canada
 							</h1>
-							<p className="text-colors-muted text-lg leading-relaxed mb-8">
+							<p className="text-colors-muted text-base md:text-lg leading-relaxed mb-6 md:mb-8">
 								Connect with licensed, insured plumbers for repairs, installations, and emergency
 								maintenance. Trusted
 								by thousands of Albertan homeowners.
@@ -252,7 +220,7 @@ export default function Services() {
 							<Flex gap="lg" align="center" wrap>
 								{trustItems.map((item, idx) => (
 									<Flex key={idx} gap="sm" align="center">
-										<item.Icon className="w-4 h-4 text-[#3B82F6]"/>
+										<item.Icon size="sm" className="text-[#3B82F6]"/>
 										<span className="text-sm text-colors-muted">{item.title}</span>
 									</Flex>
 								))}
@@ -305,10 +273,7 @@ export default function Services() {
 										variant="rounded"
 										bgColor={service.bgColor}
 									>
-										<WaterIcon
-											className="w-7 h-7"
-											style={{color: service.iconColor}}
-										/>
+										<WaterIcon size="xl" className="text-[#0077CC]" />
 									</IconBox>
 									<span className="text-lg font-semibold text-[#0077CC]">
                     {service.priceRange}
@@ -321,13 +286,10 @@ export default function Services() {
 								<Flex gap="md" direction="row" align="center" justify="start"
 											className="text-sm text-colors-muted mb-6">
 									{service.features.map((feature, idx) => (
-										<>
-											<Flex gap="none" direction="row" align="center" justify="start">
-												<feature.Icon key={idx} className="w-4 h-4"/>
-												<p className="mb-1">{feature.title}</p>
-											</Flex>
-
-										</>
+										<Flex key={idx} gap="none" direction="row" align="center" justify="start">
+											<feature.Icon size="sm" className="text-colors-muted"/>
+											<p className="mb-1">{feature.title}</p>
+										</Flex>
 									))}
 								</Flex>
 
@@ -362,7 +324,7 @@ export default function Services() {
 								<Flex gap="none" align="center" justify="center">
 									<IconBox variant="rounded" bgColor="#FFF" size="lg"
 													 className="shadow-md flex items-center justify-center">
-										<feature.Icon className="w-7 h-7 text-[#3B82F6]"/>
+										<feature.Icon size="xl" className="text-[#3B82F6]"/>
 									</IconBox>
 								</Flex>
 								<div>
@@ -392,7 +354,8 @@ export default function Services() {
 						</p>
 					</div>
 
-					<table className="w-full bg-white overflow-hidden">
+					<div className="overflow-x-auto">
+					<table className="w-full bg-white overflow-hidden min-w-[500px]">
 						<thead>
 							<tr className="bg-[#F1F4F6] border-b border-gray-200">
 								<th className="py-4 px-4 text-left font-semibold text-md text-[#0B1B2B]">Service Type</th>
@@ -415,6 +378,7 @@ export default function Services() {
 							))}
 						</tbody>
 					</table>
+				</div>
 
 					<p className="text-xs text-colors-muted mt-4">
 						* Prices are estimates only and may vary based on location, materials, and emergency status.
@@ -423,8 +387,8 @@ export default function Services() {
 			</section>
 
 			{/* CTA Section */}
-			<section className="pt-20 pb-44">
-				<Container size="xl" className="bg-gradient-to-r from-btn-primary-from to-btn-primary-to py-[80px] px-[60px] rounded-xl">
+			<section className="pt-12 md:pt-20 pb-20 md:pb-44 px-4 md:px-0">
+				<Container size="xl" className="bg-gradient-to-r from-btn-primary-from to-btn-primary-to py-12 md:py-20 px-6 sm:px-10 md:px-16 rounded-xl">
 					<div className="text-center">
 						<h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
 							Ready to fix that problem?
@@ -433,7 +397,7 @@ export default function Services() {
 							Post your job for free and get quotes from top-rated local plumbers
 							within minutes.
 						</p>
-						<Flex gap="md" justify="center">
+						<div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
 							<Button
 								variant="none"
 								size="lg"
@@ -449,7 +413,7 @@ export default function Services() {
 							>
 								Browse Directory
 							</Button>
-						</Flex>
+						</div>
 					</div>
 				</Container>
 			</section>

@@ -1,13 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/assets/images/logo.png";
-import XIcon from "@/assets/images/svg/Socials/X.svg";
-import InstagramIcon from "@/assets/images/svg/Socials/Instagram.svg";
-import LinkedInIcon from "@/assets/images/svg/Socials/LinkedIn.svg";
-import YouTubeIcon from "@/assets/images/svg/Socials/youtube-color 1.svg";
-import TiktokIcon from "@/assets/images/svg/Socials/tiktok.svg";
+import {
+  XIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  YouTubeIcon,
+  TikTokIcon,
+} from "@/components/icons";
 import SocialIcons from "@/components/ui/SocialIcons";
-import { FC, SVGProps } from "react";
+import { FC } from "react";
+import { IconProps } from "@/components/icons";
 
 const footerLinks = {
   Services: [
@@ -37,12 +40,12 @@ const footerLinks = {
 };
 
 interface SocialLink {
-  Icon: FC<SVGProps<SVGSVGElement>>;
+  Icon: FC<IconProps>;
   url: string;
 }
 
 const socialLinks: SocialLink[] = [
-  { Icon: TiktokIcon, url: "#" },
+  { Icon: TikTokIcon, url: "#" },
   { Icon: LinkedInIcon, url: "#" },
   { Icon: XIcon, url: "#" },
   { Icon: InstagramIcon, url: "#" },
@@ -52,42 +55,42 @@ const socialLinks: SocialLink[] = [
 export default function Footer() {
   return (
     <footer id="contact" className="bg-[#FCFCFC]">
-      <div className="mx-auto max-w-7xl py-14">
+      <div className="mx-auto max-w-7xl py-8 md:py-14 px-4 md:px-0">
         <div className="border border-[#F2F2F2] rounded-2xl bg-white">
-          <div className="flex flex-row items-center justify-between py-10 px-8">
-            <div className="flex flex-col items-start justify-center">
-              <p className="text-2xl text-colors-primary">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 py-8 md:py-10 px-6 md:px-8">
+            <div className="flex flex-col items-center md:items-start justify-center text-center md:text-left">
+              <p className="text-xl md:text-2xl text-colors-primary">
                 Join our newsletter
               </p>
-              <span className="text-base text-colors-muted">
+              <span className="text-sm md:text-base text-colors-muted">
                 Get Updates from Instafix
               </span>
             </div>
-            <div className="flex flex-row items-center ">
-              <form action="/" method="post">
+            <div className="w-full md:w-auto">
+              <form action="/" method="post" className="flex flex-col sm:flex-row gap-3">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="text-base text-colors-muted border border-[#F2F2F2] rounded-lg px-6 py-3 mr-5 focus:outline-none focus:ring-1 focus:ring-blue-500 w-[400px] bg-[#FCFCFC]"
+                  className="text-base text-colors-muted border border-[#F2F2F2] rounded-lg px-4 md:px-6 py-3 focus:outline-none focus:ring-1 focus:ring-blue-500 w-full sm:w-64 md:w-80 bg-[#FCFCFC]"
                 />
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-btn-primary-from to-btn-primary-to px-6 py-3 text-[15px] font-light text-white  hover:from-btn-primary-from hover:to-btn-primary-to transition"
+                  className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-btn-primary-from to-btn-primary-to px-6 py-3 text-[15px] font-light text-white hover:from-btn-primary-from hover:to-btn-primary-to transition"
                 >
                   Subscribe
                 </button>
               </form>
             </div>
           </div>
-          <div className="border-b border-[#EEEEEE] mx-8"></div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 py-10 px-8">
+          <div className="border-b border-[#EEEEEE] mx-4 md:mx-8"></div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-10 py-8 md:py-10 px-6 md:px-8">
             {/* Brand */}
-            <div className="lg:col-span-2">
+            <div className="col-span-2 sm:col-span-3 lg:col-span-2">
               <Link href="/" className="flex items-center gap-2.5 mb-4">
                 <Image src={logo} alt="logo" />
               </Link>
 
-              <p className="text-colors-muted text-[16px] leading-relaxed max-w-md mb-6">
+              <p className="text-colors-muted text-sm md:text-base leading-relaxed max-w-md mb-6">
                 Instafix simplifies repairs, connects trusted professionals, and
                 improves customer experience.
               </p>
@@ -96,15 +99,15 @@ export default function Footer() {
             {/* Links */}
             {Object.entries(footerLinks).map(([title, links]) => (
               <div key={title}>
-                <h3 className="font-semibold text-colors-primary text-[16px] mb-4">
+                <h3 className="font-semibold text-colors-primary text-sm md:text-base mb-3 md:mb-4">
                   {title}
                 </h3>
-                <ul className="space-y-3">
+                <ul className="space-y-2 md:space-y-3">
                   {links.map((link) => (
                     <li key={link.label}>
                       <a
                         href={link.href}
-                        className="text-[16px] text-colors-muted hover:text-gray-900 transition transform hover:translate-x-4"
+                        className="text-sm md:text-base text-colors-muted hover:text-gray-900 transition"
                       >
                         {link.label}
                       </a>
@@ -114,10 +117,10 @@ export default function Footer() {
               </div>
             ))}
           </div>
-          <div className="border-b border-[#EEEEEE] mx-8"></div>
+          <div className="border-b border-[#EEEEEE] mx-4 md:mx-8"></div>
           {/* Bottom */}
-          <div className="py-10 px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-gray-500 text-sm">
+          <div className="py-6 md:py-10 px-6 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-gray-500 text-xs md:text-sm text-center md:text-left">
               © {new Date().getFullYear()} INSTAFIX TECHNOLOGIES INC. All rights
               reserved
             </p>
@@ -126,7 +129,7 @@ export default function Footer() {
               <div className="flex gap-4">
                 {socialLinks.map((social, index) => (
                   <SocialIcons href={social.url} key={index}>
-                    <social.Icon className="w-6 h-6" />
+                    <social.Icon size="lg" className="text-gray-500" />
                   </SocialIcons>
                 ))}
               </div>
