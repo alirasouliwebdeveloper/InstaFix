@@ -38,9 +38,9 @@ export default function WhyInstaFix() {
   return (
     <Section>
       <Container>
-        <Grid cols={2} className="items-center">
+        <Flex direction="col-reverse" align="center" justify="between" gap="xl" mdDirection="row">
           {/* Left Image */}
-          <div className="relative">
+          {/*<div className="relative">*/}
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <Flex
                 align="center"
@@ -55,10 +55,10 @@ export default function WhyInstaFix() {
                 />
               </Flex>
             </div>
-          </div>
+          {/*</div>*/}
 
           {/* Right Content */}
-          <div className="mt-8 md:mt-0">
+          <div className="mt-0 text-center sm:text-start">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-colors-primary mb-3 md:mb-4">
               Why InstaFix?
             </h2>
@@ -77,7 +77,7 @@ export default function WhyInstaFix() {
                   <h3 className="text-lg font-bold text-colors-primary mb-2">
                     {why.title}
                   </h3>
-                  <p className="text-base text-colors-muted">
+                  <p className="text-base text-colors-muted text-start">
                     {why.description}
                   </p>
                 </Flex>
@@ -88,7 +88,7 @@ export default function WhyInstaFix() {
               Get Started
             </Button>
           </div>
-        </Grid>
+        </Flex>
       </Container>
     </Section>
   );

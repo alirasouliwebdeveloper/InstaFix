@@ -25,6 +25,7 @@ export {HandymanIcon} from "./icons/HandymanIcon";
 export {HeartHandIcon} from "./icons/HeartHandIcon";
 export {HomeIcon} from "./icons/HomeIcon";
 export {HvacIcon} from "./icons/HvacIcon";
+export {IncreaseIcon} from "./icons/IncreaseIcon";
 export {InstagramIcon} from "./icons/InstagramIcon";
 export {LinkedInIcon} from "./icons/LinkedInIcon";
 export {LocationIcon} from "./icons/LocationIcon";

@@ -39,9 +39,9 @@ const faqs = [
 export default function FAQ() {
   return (
     <section id="faq" className="mx-auto max-w-7xl py-16 md:py-24">
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-2">
-        <div className="text-start mb-12 col-span-2">
-          <h2 className="text-5xl font-semibold text-colors-primary leading-loose">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-2 px-2 md:mx-4 lg:mx-0">
+        <div className="text-start mb-12 col-span-2 ">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl text-center md:text-start font-semibold text-colors-primary leading-loose">
             Frequently Asked Questions
           </h2>
         </div>

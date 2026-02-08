@@ -1,11 +1,12 @@
 interface BadgeProps {
   children: React.ReactNode;
-  variant?: "default" | "primary" | "outline";
+  variant?: "none" | "default" | "primary" | "outline";
   size?: "sm" | "md";
   className?: string;
 }
 
 const variantClasses = {
+  none: "",
   default: "text-colors-primary bg-colors-category",
   primary: "text-white bg-gradient-to-r from-btn-primary-from to-btn-primary-to",
   outline: "text-[#2563EB] bg-[#EFF6FF] border border-[#2563EB]",

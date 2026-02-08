@@ -35,7 +35,7 @@ const articles: ArticleType[] = [
 
 export default function Articles() {
   return (
-    <Section>
+    <Section className="px-2 lg:mx-0">
       <Container>
         <SectionTitle
           title="Articles & Guides"
