@@ -129,7 +129,7 @@ export default function Portfolio() {
 	return (
 		<>
 			{/* Hero Section */}
-			<section className="bg-[#F7FAFB] pt-24 md:pt-40 pb-24">
+			<section className="bg-[#F7FAFB] pt-24 md:pt-40 pb-24 px-2 md:mx-4 lg:mx-0">
 				<Container size="xl">
 					<div className="text-center max-w-2xl mx-auto px-4">
 						<h1 className="text-3xl sm:text-4xl md:text-[40px] font-semibold text-[#0B2131] mb-4">
@@ -144,7 +144,7 @@ export default function Portfolio() {
 			</section>
 
 			{/* Filter Section */}
-			<section className="pb-8 bg-[#F7FAFB]">
+			<section className="pb-8 bg-[#F7FAFB] px-2 md:mx-4 lg:mx-0">
 				<Container size="xl" className="rounded-lg border border-1 border-gray-200 ">
 					<div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 p-4">
 						{/* Dropdowns */}
@@ -218,7 +218,7 @@ export default function Portfolio() {
 			</section>
 
 			{/* Projects Grid */}
-			<section className="py-8 md:py-12 bg-[#F7FAFB]">
+			<section className="py-8 md:py-12 bg-[#F7FAFB] px-2 md:mx-4 lg:mx-0">
 				<Container size="xl">
 					<Grid cols={2} gap="md">
 						{projects.map((project) => (
@@ -292,10 +292,10 @@ export default function Portfolio() {
 
 									{/* Buttons */}
 									<div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-										<Button href={`/portfolio/${project.id}/`} variant="primary" size="sm" className="flex-1 text-xs sm:text-sm">
+										<Button href={`/portfolio/${project.id}/`} variant="primary" size="md" className="lg:flex-1 text-sm sm:text-sm">
 											View Details
 										</Button>
-										<Button variant="outline" size="sm" className="flex-1 text-xs sm:text-sm">
+										<Button variant="outline" size="md" className="lg:flex-1 text-xs sm:text-sm">
 											Before & After
 										</Button>
 									</div>
