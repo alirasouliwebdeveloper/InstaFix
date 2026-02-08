@@ -11,8 +11,8 @@ import {
 	ShieldCheckIcon,
 	VerifiedIcon,
 } from "@/components/icons";
-import { IconProps } from "@/components/icons";
-import { FC } from "react";
+import {IconProps} from "@/components/icons";
+import {FC} from "react";
 
 // Keep complex decorated stat card SVGs as images
 import happyClientSVG from "@/assets/images/svg/servicesPage/happy_clients.svg";
@@ -40,8 +40,8 @@ const services: Service[] = [
 		id: 1,
 		title: "Leak Detection & Repair",
 		features: [
-			{ Icon: ClockIcon, title: "1-2 hours" },
-			{ Icon: ToolsIcon, title: "emergency service" },
+			{Icon: ClockIcon, title: "1-2 hours"},
+			{Icon: ToolsIcon, title: "emergency service"},
 		],
 		priceRange: "$100 - $300",
 		iconColor: "#0077CC",
@@ -51,8 +51,8 @@ const services: Service[] = [
 		id: 2,
 		title: "Drain Cleaning",
 		features: [
-			{ Icon: ClockIcon, title: "1-3 hours" },
-			{ Icon: CheckCircleIcon, title: "Clog removal" },
+			{Icon: ClockIcon, title: "1-3 hours"},
+			{Icon: CheckCircleIcon, title: "Clog removal"},
 		],
 		priceRange: "$100 - $300",
 		iconColor: "#0077CC",
@@ -62,8 +62,8 @@ const services: Service[] = [
 		id: 3,
 		title: "Water Heater Install",
 		features: [
-			{ Icon: ClockIcon, title: "3-5 hours" },
-			{ Icon: ThunderIcon, title: "Gas or Electric" },
+			{Icon: ClockIcon, title: "3-5 hours"},
+			{Icon: ThunderIcon, title: "Gas or Electric"},
 		],
 		priceRange: "$300 - $1,500",
 		iconColor: "#0077CC",
@@ -73,8 +73,8 @@ const services: Service[] = [
 		id: 4,
 		title: "Toilet Repair / Install",
 		features: [
-			{ Icon: ClockIcon, title: "2-3 hours" },
-			{ Icon: TrashIcon, title: "Disposal option" },
+			{Icon: ClockIcon, title: "2-3 hours"},
+			{Icon: TrashIcon, title: "Disposal option"},
 		],
 		priceRange: "$150 - $500",
 		iconColor: "#0077CC",
@@ -84,8 +84,8 @@ const services: Service[] = [
 		id: 5,
 		title: "Faucet & Sink Repair",
 		features: [
-			{ Icon: ClockIcon, title: "1-2 hours" },
-			{ Icon: WaterIcon, title: "Leak fix" },
+			{Icon: ClockIcon, title: "1-2 hours"},
+			{Icon: WaterIcon, title: "Leak fix"},
 		],
 		priceRange: "$80 - $250",
 		iconColor: "#0077CC",
@@ -95,8 +95,8 @@ const services: Service[] = [
 		id: 6,
 		title: "Frozen Pipe Thawing",
 		features: [
-			{ Icon: ClockIcon, title: "2-4 hours" },
-			{ Icon: DangerIcon, title: "Emergency" },
+			{Icon: ClockIcon, title: "2-4 hours"},
+			{Icon: DangerIcon, title: "Emergency"},
 		],
 		priceRange: "$150 - $400",
 		iconColor: "#0077CC",
@@ -165,9 +165,9 @@ const costGuideData = [
 ];
 
 const trustItems = [
-	{ title: "Licensed & insured", Icon: CheckCircleIcon },
-	{ title: "Same-day service available", Icon: ClockIcon },
-	{ title: "Local professionals", Icon: LocationIcon },
+	{title: "Licensed & insured", Icon: CheckCircleIcon},
+	{title: "Same-day service available", Icon: ClockIcon},
+	{title: "Local professionals", Icon: LocationIcon},
 ];
 
 const clientFeatures = [
@@ -185,7 +185,7 @@ export default function Services() {
 	return (
 		<>
 			{/* Hero Section */}
-			<section className="bg-[#F1F4F6] pt-24 md:pt-32 pb-12 md:pb-16">
+			<section className="bg-[#F1F4F6] pt-24 md:pt-32 pb-12 md:pb-16 px-2 md:mx-4 lg:mx-0">
 				<Container size="xl">
 					<Flex
 						direction="col"
@@ -208,7 +208,7 @@ export default function Services() {
 								by thousands of Albertan homeowners.
 							</p>
 
-							<Flex gap="md" className="mb-8">
+							<Flex gap="md" className="mb-8" align="start" direction="col" justify="start" lgDirection="row">
 								<Button variant="primary" size="lg" weight="semiBold">
 									Request a Quote
 								</Button>
@@ -249,7 +249,7 @@ export default function Services() {
 			</section>
 
 			{/* Common Plumbing Services Section */}
-			<section className="py-20 bg-[#F7F9FB]">
+			<section className="py-20 bg-[#F7F9FB] md:pb-16 px-2 md:mx-4 lg:mx-0">
 				<Container size="xl" className="text-start">
 					<div className="mb-12">
 						<h2 className="text-3xl font-bold text-[#0B1B2B] mb-4">
@@ -273,7 +273,7 @@ export default function Services() {
 										variant="rounded"
 										bgColor={service.bgColor}
 									>
-										<WaterIcon size="xl" className="text-[#0077CC]" />
+										<WaterIcon size="xl" className="text-[#0077CC]"/>
 									</IconBox>
 									<span className="text-lg font-semibold text-[#0077CC]">
                     {service.priceRange}
@@ -307,7 +307,7 @@ export default function Services() {
 			</section>
 
 			{/* Why Choose InstaFix Section */}
-			<section className="py-20 bg-[#E9F5FF]">
+			<section className="py-20 bg-[#E9F5FF] px-2 md:mx-4 lg:mx-0">
 				<Container size="xl">
 					<div className="mb-12">
 						<h2 className="text-3xl font-bold text-[#0B2140] mb-4">
@@ -342,7 +342,7 @@ export default function Services() {
 			</section>
 
 			{/* Cost Guide Section */}
-			<section className="py-20 bg-white">
+			<section className="py-20 bg-white px-2 md:mx-4 lg:mx-0">
 				<Container size="xl">
 					<div className="mb-12">
 						<h2 className="text-3xl font-bold text-[#0B2140] mb-4">
@@ -355,16 +355,16 @@ export default function Services() {
 					</div>
 
 					<div className="overflow-x-auto">
-					<table className="w-full bg-white overflow-hidden min-w-[500px]">
-						<thead>
+						<table className="w-full bg-white overflow-hidden min-w-[500px]">
+							<thead>
 							<tr className="bg-[#F1F4F6] border-b border-gray-200">
 								<th className="py-4 px-4 text-left font-semibold text-md text-[#0B1B2B]">Service Type</th>
 								<th className="py-4 px-4 text-center font-semibold text-md text-[#0B1B2B]">Low End</th>
 								<th className="py-4 px-4 text-center font-semibold text-md text-[#0B1B2B]">Average Cost</th>
 								<th className="py-4 px-4 text-center font-semibold text-md text-[#0B1B2B]">High End</th>
 							</tr>
-						</thead>
-						<tbody>
+							</thead>
+							<tbody>
 							{costGuideData.map((row, idx) => (
 								<tr
 									key={idx}
@@ -376,9 +376,9 @@ export default function Services() {
 									<td className="py-4 px-6 text-sm text-colors-muted text-center">{row.high}</td>
 								</tr>
 							))}
-						</tbody>
-					</table>
-				</div>
+							</tbody>
+						</table>
+					</div>
 
 					<p className="text-xs text-colors-muted mt-4">
 						* Prices are estimates only and may vary based on location, materials, and emergency status.
@@ -387,8 +387,9 @@ export default function Services() {
 			</section>
 
 			{/* CTA Section */}
-			<section className="pt-12 md:pt-20 pb-20 md:pb-44 px-4 md:px-0">
-				<Container size="xl" className="bg-gradient-to-r from-btn-primary-from to-btn-primary-to py-12 md:py-20 px-6 sm:px-10 md:px-16 rounded-xl">
+			<section className="pt-12 md:pt-20 pb-20 md:pb-44 px-2 md:mx-4 lg:mx-0">
+				<Container size="xl"
+									 className="bg-gradient-to-r from-btn-primary-from to-btn-primary-to py-12 md:py-20 px-6 sm:px-10 md:px-16 rounded-xl">
 					<div className="text-center">
 						<h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
 							Ready to fix that problem?
