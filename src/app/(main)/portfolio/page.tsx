@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {Button, Container, Grid} from "@/components/ui";
+import {Button, Container, Grid, Section} from "@/components/ui";
 import { LocationIcon, BadgeCheckIcon } from "@/components/icons";
 
 // Placeholder project images - replace with actual images
@@ -129,7 +129,7 @@ export default function Portfolio() {
 	return (
 		<>
 			{/* Hero Section */}
-			<section className="bg-[#F7FAFB] pt-24 md:pt-40 pb-24 px-2 md:mx-4 lg:mx-0">
+			<Section className="pt-24 md:pt-40 pb-24 px-2 md:px-4 lg:px-0" bgColor="#F7FAFB">
 				<Container size="xl">
 					<div className="text-center max-w-2xl mx-auto px-4">
 						<h1 className="text-3xl sm:text-4xl md:text-[40px] font-semibold text-[#0B2131] mb-4">
@@ -141,10 +141,10 @@ export default function Portfolio() {
 						</p>
 					</div>
 				</Container>
-			</section>
+			</Section>
 
 			{/* Filter Section */}
-			<section className="pb-8 bg-[#F7FAFB] px-2 md:mx-4 lg:mx-0">
+			<section className="pb-8 bg-[#F7FAFB] px-2 md:px-4 lg:px-0">
 				<Container size="xl" className="rounded-lg border border-1 border-gray-200 ">
 					<div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 p-4">
 						{/* Dropdowns */}
@@ -218,7 +218,7 @@ export default function Portfolio() {
 			</section>
 
 			{/* Projects Grid */}
-			<section className="py-8 md:py-12 bg-[#F7FAFB] px-2 md:mx-4 lg:mx-0">
+			<section className="py-8 md:py-12 bg-[#F7FAFB] px-2 md:px-4 lg:px-0">
 				<Container size="xl">
 					<Grid cols={2} gap="md">
 						{projects.map((project) => (

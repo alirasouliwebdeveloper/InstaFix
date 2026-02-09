@@ -1,4 +1,4 @@
-import {Button, Container, Flex, Grid, IconBox} from "@/components/ui";
+import {Button, Container, Flex, Grid, IconBox, Section} from "@/components/ui";
 import {
 	CheckCircleIcon,
 	ClockIcon,
@@ -185,7 +185,7 @@ export default function Services() {
 	return (
 		<>
 			{/* Hero Section */}
-			<section className="bg-[#F1F4F6] pt-24 md:pt-32 pb-12 md:pb-16 px-2 md:mx-4 lg:mx-0">
+			<Section className="pt-24 md:pt-32 pb-12 md:pb-16 px-2 md:px-4 lg:px-0" bgColor="#F1F4F6">
 				<Container size="xl">
 					<Flex
 						direction="col"
@@ -246,10 +246,10 @@ export default function Services() {
 						</div>
 					</Flex>
 				</Container>
-			</section>
+			</Section>
 
 			{/* Common Plumbing Services Section */}
-			<section className="py-20 bg-[#F7F9FB] md:pb-16 px-2 md:mx-4 lg:mx-0">
+			<Section className="py-20 md:pb-16 px-2 md:px-4 lg:px-0" bgColor="#F7F9FB">
 				<Container size="xl" className="text-start">
 					<div className="mb-12">
 						<h2 className="text-3xl font-bold text-[#0B1B2B] mb-4">
@@ -304,10 +304,10 @@ export default function Services() {
 						))}
 					</Grid>
 				</Container>
-			</section>
+			</Section>
 
 			{/* Why Choose InstaFix Section */}
-			<section className="py-20 bg-[#E9F5FF] px-2 md:mx-4 lg:mx-0">
+			<Section className="py-20 px-2 md:px-4 lg:px-0" bgColor="#E9F5FF">
 				<Container size="xl">
 					<div className="mb-12">
 						<h2 className="text-3xl font-bold text-[#0B2140] mb-4">
@@ -339,10 +339,10 @@ export default function Services() {
 						))}
 					</Grid>
 				</Container>
-			</section>
+			</Section>
 
 			{/* Cost Guide Section */}
-			<section className="py-20 bg-white px-2 md:mx-4 lg:mx-0">
+			<Section className="py-20 px-2 md:px-4 lg:px-0" bgColor="#FFFFFF">
 				<Container size="xl">
 					<div className="mb-12">
 						<h2 className="text-3xl font-bold text-[#0B2140] mb-4">
@@ -384,10 +384,10 @@ export default function Services() {
 						* Prices are estimates only and may vary based on location, materials, and emergency status.
 					</p>
 				</Container>
-			</section>
+			</Section>
 
 			{/* CTA Section */}
-			<section className="pt-12 md:pt-20 pb-20 md:pb-44 px-2 md:mx-4 lg:mx-0">
+			<Section className="pt-12 md:pt-20 pb-20 md:pb-44 px-2 md:px-4 lg:px-0">
 				<Container size="xl"
 									 className="bg-gradient-to-r from-btn-primary-from to-btn-primary-to py-12 md:py-20 px-6 sm:px-10 md:px-16 rounded-xl">
 					<div className="text-center">
@@ -417,7 +417,7 @@ export default function Services() {
 						</div>
 					</div>
 				</Container>
-			</section>
+			</Section>
 		</>
 	);
 }

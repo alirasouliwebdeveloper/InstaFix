@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {Breadcrumb, Button, Container, Flex, Grid} from "@/components/ui";
+import {Breadcrumb, Button, Container, Flex, Grid, Section} from "@/components/ui";
 import {
 	BadgeCheckIcon,
 	CalenderIcon,
@@ -97,20 +97,20 @@ export default function ProjectDetail() {
 	return (
 		<>
 			{/* Breadcrumb */}
-			<section className="bg-[#F7FAFB] pt-24 md:pt-32 pb-6">
+			<Section spacing="none" className="pt-24 pb-0 md:pt-28 mb-0" bgColor="#F7FAFB">
 				<Container size="xl">
 					<Breadcrumb items={project.breadcrumb}/>
 				</Container>
-			</section>
+			</Section>
 
 			{/* Main Content */}
-			<section className="bg-[#F7FAFB] pb-12 md:pb-20">
+			<Section spacing="none" className="pb-12 pt-6 md:pb-20" bgColor="#F7FAFB">
 				<Container size="xl">
 					{/* Title */}
 					<h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#0B1B2B] mb-6">
 						{project.title}
 					</h1>
-					<div className="flex flex-wrap items-center gap-3 md:gap-4 text-sm text-colors-muted mb-6 md:mb-8">
+					<Flex wrap={true} gap="md" align="center" className="text-sm text-colors-muted mb-6 md:mb-8">
 						<span className="flex items-center gap-1">
 							<LocationIcon size={14} className="text-[#0066CC]"/>
 							{project.location}
@@ -123,13 +123,13 @@ export default function ProjectDetail() {
 							<HomeIcon size={14} className="text-[#0066CC]"/>
 							{project.category}
 						</span>
-					</div>
+					</Flex>
 
 					<div className="flex flex-col lg:flex-row gap-12">
 						{/* Left - Images */}
 						<div className="w-full lg:w-2/3">
 							{/* Main Image */}
-							<div className="relative h-auto sm:h-auto md:h-[480px] rounded-xl overflow-hidden mb-4">
+							<div className="relative min-h-[200px] md:h-[480px] rounded-xl overflow-hidden mb-4">
 								<Image
 									src={project.images.main}
 									alt={project.title}
@@ -144,7 +144,7 @@ export default function ProjectDetail() {
 							{/* Gallery Thumbnails */}
 							<div className="grid grid-cols-2 gap-4">
 								{project.images.gallery.map((img, idx) => (
-									<div key={idx} className="relative h-32 sm:h-40 md:h-72 rounded-lg overflow-hidden">
+									<div key={idx} className="relative h-52 sm:h-40 md:h-72 rounded-lg overflow-hidden">
 										<Image
 											src={img.src}
 											alt={img.label}
@@ -241,7 +241,6 @@ export default function ProjectDetail() {
 									))}
 								</div>
 							</div>
-
 						</div>
 
 						{/* Right - Sidebar */}
@@ -318,7 +317,7 @@ export default function ProjectDetail() {
 						</div>
 					</div>
 				</Container>
-			</section>
+			</Section>
 		</>
 	);
 }
