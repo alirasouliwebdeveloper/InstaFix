@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {Badge, Button, Container, Flex, Grid} from "@/components/ui";
+import {Badge, Button, Container, Flex, Grid, Section} from "@/components/ui";
 import {CheckCircleIcon, ClockIcon, IncreaseIcon, LocationIcon, StarIcon} from "@/components/icons";
 import {IconProps} from "@/components/icons";
 import {FC} from "react";
@@ -106,11 +106,11 @@ export default function RenovationCategory() {
 	return (
 		<>
 			{/* Hero Section */}
-			<section className="bg-gradient-to-b from-[#B1CFFF] to-[#F7FAFB] pt-24 md:pt-36 pb-12 md:pb-16">
+			<Section spacing="none" className="bg-gradient-to-b from-[#B1CFFF] to-[#F7FAFB] pt-24 md:pt-36 pb-12 md:pb-16">
 				<Container size="xl">
-					<Flex>
+					<Flex direction="col" gap="md" align="center" justify="center" smDirection="row">
 						{/* Left Section */}
-						<div className="w-1/2">
+						<div className="w-full md:w-1/2">
 							<p className="text-[#0077CC] text-xs font-semibold uppercase tracking-wide mb-3">
 								HOME SERVICES / RENOVATION
 							</p>
@@ -121,25 +121,26 @@ export default function RenovationCategory() {
 								{`Connect with Alberta's top-rated renovation contractors for basement
 								developments, kitchen remodels, additions, and complete home transformations.`}
 							</p>
-							<div className="flex flex-col sm:flex-row gap-3 mb-6 md:mb-8">
-								<Button variant="primary" size="lg" weight="semiBold">
+							<Flex direction="col" justify="center" align="center" smDirection="row" gap="sm"
+										className="md:justify-start mb-6 md:mb-8">
+								<Button variant="primary" size="lg" weight="semiBold" className="w-full md:w-auto">
 									Start Your Project
 								</Button>
-								<Button variant="outline" size="lg">
+								<Button variant="outline" size="lg" className="w-full md:w-auto">
 									View Past Projects
 								</Button>
-							</div>
-							<div className="flex flex-wrap gap-4 md:gap-6">
+							</Flex>
+							<Flex direction="row" wrap={true} gap="md" className="md:gap-6">
 								{trustItems.map((item, idx) => (
 									<div key={idx} className="flex items-center gap-2">
 										<item.Icon size="sm" className="text-[#3B82F6]"/>
 										<span className="text-sm text-colors-muted">{item.title}</span>
 									</div>
 								))}
-							</div>
+							</Flex>
 						</div>
 						{/* Right Section */}
-						<div className="w-1/2 relative">
+						<div className="w-full md:w-1/2 relative">
 							<Image src={renovationHeroImage} alt="Hero" className="rounded-xl"/>
 							<div className="absolute bottom-6 left-6 bg-white flex flex-row items-center p-4 rounded-lg">
 								<Flex gap="md" align="center" justify="start" direction="row">
@@ -158,10 +159,10 @@ export default function RenovationCategory() {
 					</Flex>
 
 				</Container>
-			</section>
+			</Section>
 
 			{/* Stats Section */}
-			<section className="bg-[#F7FAFB] py-8 md:py-12">
+			<Section spacing="none" bgColor="#F7FAFB" className="py-2 md:py-10">
 				<Container size="xl">
 					{/* border-b border-gray-100 */}
 					<Grid cols={4} gap="lg">
@@ -175,10 +176,10 @@ export default function RenovationCategory() {
 						))}
 					</Grid>
 				</Container>
-			</section>
+			</Section>
 
 			{/* Popular Renovation Services */}
-			<section className="py-12 md:py-20 bg-[#F7FAFB]">
+			<Section spacing="none" bgColor="#F7FAFB" className="py-8 md:py-10 lg:py-20">
 				<Container size="xl">
 					<div className="mb-8 md:mb-12">
 						<h2 className="text-2xl md:text-3xl font-semibold text-[#0B1B2B] mb-3">
@@ -220,13 +221,15 @@ export default function RenovationCategory() {
 						))}
 					</Grid>
 				</Container>
-			</section>
+			</Section>
 
 			{/* Featured Contractor */}
-			<section className="py-12 md:py-20 bg-[#F1F5F9]">
+			<Section spacing="none" bgColor="#F1F5F9" className="py-8 md:py-10 lg:py-20">
 				<Container size="xl">
-					<Flex gap="2xl" align="center" justify="center" direction="row" className="bg-[#F7FAFC] p-12 rounded-lg">
-						<div className="w-full lg:w-1/2">
+					<Flex gap="2xl" align="center" justify="center" mdDirection="row" direction="col"
+								className="bg-[#F7FAFC] p-12 rounded-lg">
+						{/* Left Section */}
+						<div className="w-full md:w-1/2">
 							<Flex gap="sm" align="center" justify="start"
 										className="text-[#0077CC] text-base font-semibold uppercase tracking-wide">
 								<StarIcon size="md"/>
@@ -252,7 +255,8 @@ export default function RenovationCategory() {
 								</Button>
 							</div>
 						</div>
-						<div className="w-full lg:w-1/2">
+						{/* Right Section */}
+						<div className="w-full md:w-1/2">
 							<div className="relative h-64 sm:h-80 md:h-96 rounded-xl overflow-hidden">
 								<Image
 									src={featuredContractor.image}
@@ -264,10 +268,10 @@ export default function RenovationCategory() {
 						</div>
 					</Flex>
 				</Container>
-			</section>
+			</Section>
 
 			{/* Recent Transformations */}
-			<section className="py-12 md:py-20 bg-[#FAFBFC]">
+			<Section spacing="none" bgColor="#FAFBFC" className="py-8 md:py-10 lg:py-20">
 				<Container size="xl">
 					<div className="text-center mb-8 md:mb-12">
 						<h2 className="text-2xl md:text-3xl font-semibold text-[#0B2545] mb-3">
@@ -282,7 +286,7 @@ export default function RenovationCategory() {
 						{recentProjects.map((project) => (
 							<div
 								key={project.id}
-								className="group relative rounded-xl overflow-hidden h-48 sm:h-60 md:h-80"
+								className="group relative rounded-xl overflow-hidden h-60 md:h-80"
 							>
 								<Image
 									src={project.image}
@@ -303,10 +307,10 @@ export default function RenovationCategory() {
 						))}
 					</Grid>
 				</Container>
-			</section>
+			</Section>
 
 			{/* CTA Section */}
-			<section className="py-12 md:py-20 px-4 md:px-0 bg-[#FAFBFC]">
+			<Section spacing="none" bgColor="#FAFBFC" className="py-8 md:py-10 lg:py-20 px-4 md:px-0">
 				<Container size="xl"
 									 className="bg-gradient-to-r from-btn-primary-from to-btn-primary-to py-12 md:py-16 px-6 sm:px-10 md:px-16 rounded-xl">
 					<div className="text-center">
@@ -335,7 +339,7 @@ export default function RenovationCategory() {
 						</div>
 					</div>
 				</Container>
-			</section>
+			</Section>
 		</>
 	);
 }
