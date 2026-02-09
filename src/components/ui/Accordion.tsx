@@ -18,13 +18,13 @@ function AccordionItem({
   onClick,
 }: AccordionItemProps) {
   return (
-    <div className="px-8 py-5 bg-[#FCFCFC] my-4 rounded-lg border border-[#F2F2F2]">
+    <div className="px-4 py-2 lg:px-8 lg:py-5 bg-[#FCFCFC] my-4 rounded-lg border border-[#F2F2F2]">
       <button
         onClick={onClick}
         className="w-full text-left transition-colors group"
       >
         <Flex align="center" justify="between">
-          <span className="text-xl font-semibold text-gray-900 pr-4 group-hover:text-blue-600 transition">
+          <span className="text-sm md:text-sm lg:text-md font-semibold text-gray-900 pr-4 group-hover:text-blue-600 transition">
             {question}
           </span>
           <Flex
@@ -33,9 +33,15 @@ function AccordionItem({
             className="rounded-full bg-white shadow-sm p-2"
           >
             {isOpen ? (
-              <MinusIcon size="lg" className="text-blue-600 transition-transform duration-300" />
+              <MinusIcon
+                size="lg"
+                className="text-blue-600 transition-transform duration-300"
+              />
             ) : (
-              <PlusIcon size="lg" className="text-blue-600 transition-transform duration-300" />
+              <PlusIcon
+                size="lg"
+                className="text-blue-600 transition-transform duration-300"
+              />
             )}
           </Flex>
         </Flex>
@@ -46,7 +52,9 @@ function AccordionItem({
           isOpen ? "max-h-96 pb-6" : "max-h-0"
         }`}
       >
-        <p className="text-gray-600 leading-relaxed mt-4">{answer}</p>
+        <p className="text-sm md:text-sm lg:text-md text-colors-muted leading-relaxed mt-4">
+          {answer}
+        </p>
       </div>
     </div>
   );
