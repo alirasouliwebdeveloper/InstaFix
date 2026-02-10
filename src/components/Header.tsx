@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import logo from "@/assets/images/logo.png";
 import Image from "next/image";
-import {Flex} from "@/components/ui";
+import { Flex } from "@/components/ui";
 
 const nav = [
   { label: "Services", href: "/services" },
@@ -13,6 +13,7 @@ const nav = [
   { label: "About us", href: "/about-us" },
   { label: "Contact us", href: "/contact-us" },
   { label: "Privacy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
 ];
 
 export default function Header() {
@@ -20,7 +21,10 @@ export default function Header() {
 
   return (
     <header className="absolute top-0 left-0 right-0 pt-3 md:pt-5 z-50 bg-transparent px-4 md:px-0">
-      <Flex gap="md" align="center" justify="between"
+      <Flex
+        gap="md"
+        align="center"
+        justify="between"
         className="mx-auto h-14 md:h-[72px] max-w-7xl px-3 md:p-4
       bg-background-header border border-[#F2F2F2] rounded-xl md:rounded-2xl"
       >
@@ -35,7 +39,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-Menu md:hover:text-MenuHover px-2 py-4"
+              className="text-sm md:text-md font-normal text-colors-primary hover:text-[18px] transform duration-300 py-4 px-4"
             >
               {item.label}
             </Link>
@@ -58,7 +62,7 @@ export default function Header() {
             className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-btn-primary-from to-btn-primary-to
              px-3 md:px-6 py-2 md:py-3 text-xs md:text-[15px] font-semibold text-white hover:from-btn-primary-from hover:to-btn-primary-to transition"
           >
-            Get Started
+            Sign up
           </Link>
 
           {/* Mobile Menu Button */}

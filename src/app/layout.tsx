@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import FloatingAssistant from "@/components/FloatingAssistant";
 
 export const metadata: Metadata = {
   title: "InstaFix - Book Trusted Home Service Professionals in Canada",
@@ -14,7 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-white text-black font-sans antialiased">{children}</body>
+      <body className="min-h-screen bg-white text-black font-sans antialiased">
+        {children}
+        <FloatingAssistant />
+      </body>
     </html>
   );
 }

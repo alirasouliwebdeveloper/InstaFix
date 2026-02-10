@@ -9,7 +9,7 @@ import AssistantIcon from "@/assets/images/svg/assistant.svg";
 import DotImage from "@/assets/images/svg/Hero Section Dots.svg";
 import Card from "@/components/ui/Card";
 import Link from "next/link";
-import {Flex} from "@/components/ui";
+import { Button, Flex } from "@/components/ui";
 
 export default function Hero() {
   return (
@@ -28,7 +28,7 @@ export default function Hero() {
               className="text-xs lg:text-sm text-black p-3 md:p-4 mb-8 md:mb-12 w-auto inline-block new-card"
               hover={false}
             >
-              <Flex gap="sm" align="center" justify="center" className="mb-2">
+              <Flex gap="sm" align="center" justify="start" className="mb-2">
                 <div className="h-8 w-8 rounded-full bg-orange-300 flex items-center justify-center">
                   <StarFilledIcon size="xs" className="text-white" />
                 </div>
@@ -48,24 +48,32 @@ export default function Hero() {
               service guaranteed.
             </p>
 
-            <Flex gap="md" align="center" direction="col" smDirection="row" justify="center" className="mb-6 md:mb-8 lg:justify-start">
-              <Link
+            <Flex
+              gap="md"
+              align="center"
+              direction="col"
+              smDirection="row"
+              justify="center"
+              className="mb-6 md:mb-8 lg:justify-start"
+            >
+              <Button
+                variant="primary"
                 href="/"
-                className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r
-                 from-btn-primary-from to-btn-primary-to px-5 md:px-6 py-3 text-base md:text-lg lg:text-xl text-white
-                 hover:from-btn-primary-from hover:to-btn-primary-to w-full sm:w-auto"
+                className="text-sm md:text-base"
+                size="md"
+                weight="light"
               >
                 Find a Professional
                 <SearchIcon size="lg" className="ml-3 text-white" />
-              </Link>
-              <Link
+              </Button>
+              <Button
+                variant="secondary"
+                className="text-sm md:text-base"
+                weight="normal"
                 href="/"
-                className="inline-flex items-center justify-center rounded-lg
-                 text-base md:text-lg lg:text-xl font-medium
-                 bg-background-muted px-5 md:px-6 py-3 w-full sm:w-auto"
               >
-                Join as a pro
-              </Link>
+                Explore Benefits
+              </Button>
             </Flex>
 
             <div className="flex items-center justify-center lg:justify-start gap-4">
@@ -97,18 +105,23 @@ export default function Hero() {
                 hover={false}
               >
                 <Flex gap="sm" align="center" className="mb-2">
-                  <Flex gap="none" align="center" justify="center" className="h-7 w-7 md:h-8 md:w-8 rounded-full bg-background-tick">
+                  <Flex
+                    gap="none"
+                    align="center"
+                    justify="center"
+                    className="h-7 w-7 md:h-8 md:w-8 rounded-full bg-background-tick"
+                  >
                     <CheckIcon size="md" className="text-white" />
                   </Flex>
-                  <span className="font-bold text-sm md:text-md"> Job Completed</span>
+                  <span className="font-bold text-sm md:text-md">
+                    {" "}
+                    Job Completed
+                  </span>
                 </Flex>
-                <p className="text-xs md:text-[14px]">Trusted Experts Finish Every Task</p>
+                <p className="text-xs md:text-[14px]">
+                  Trusted Experts Finish Every Task
+                </p>
               </Card>
-            </div>
-            <div className="absolute bg-white rounded-full w-10 h-10 md:w-14 md:h-14 p-1.5 md:p-2 right-2 md:right-[10px] bottom-2 md:bottom-[10px]">
-              <a href="#assistant">
-                <AssistantIcon className="w-full h-full" />
-              </a>
             </div>
           </div>
         </div>

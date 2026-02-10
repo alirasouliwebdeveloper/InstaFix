@@ -10,7 +10,6 @@ const sections = [
   { id: "data-collection", label: "Data Collection" },
   { id: "how-we-use-data", label: "How We Use Data" },
   { id: "information-sharing", label: "Information Sharing" },
-  { id: "security-measures", label: "Security Measures" },
   { id: "faq", label: "Frequently Asked Questions" },
 ];
 
@@ -63,7 +62,7 @@ export default function Privacy() {
           justify="center"
         >
           {/* Left Sidebar Navigation */}
-          <div className="w-full md:w-1/4 md:sticky md:top-32">
+          <div className="w-full md:w-1/4 md:sticky md:top-10">
             <p className="text-colors-muted text-xs font-semibold uppercase mb-6">
               On this page
             </p>
@@ -107,7 +106,7 @@ export default function Privacy() {
           </div>
 
           {/* Right Content */}
-          <div className="w-full md:w-3/4">
+          <div className="w-full md:w-3/4 privacy">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#0B2140] mb-4 md:mb-6">
               Privacy Policy
             </h1>
@@ -118,18 +117,16 @@ export default function Privacy() {
             <hr className="bg-gray-300 w-full mb-12" />
 
             {/* Introduction */}
-            <section id="introduction" className="mb-12 scroll-mt-32">
-              <h2 className="text-2xl font-semibold text-[#0B2140] mb-4">
-                {` `}
-              </h2>
-              <p className="text-[#0B2140] text-base leading-relaxed mb-6">
+            <section id="introduction">
+              <h2>{` `}</h2>
+              <p>
                 {`At InstaFix, we take your privacy seriously. This Privacy Policy
               describes how InstaFix Inc. ("we," "us," or "our") collects, uses,
               and discloses your personal information when you visit our
               website, use our mobile application, or engage with our home
               services marketplace (collectively, the "Services").`}
               </p>
-              <p className="text-[#0B2140] text-base leading-relaxed mb-6">
+              <p>
                 {`By using our Services, you consent to the collection and use of
               your information as outlined in this policy. We are committed to
               transparency and ensuring that you retain control over your
@@ -138,73 +135,57 @@ export default function Privacy() {
             </section>
 
             {/* Data Collection */}
-            <section id="data-collection" className="mb-12 scroll-mt-32">
-              <h2 className="text-2xl font-semibold text-[#0B2140] mb-4">
-                1. Data We Collect
-              </h2>
-              <p className="text-[#0B2140] text-base leading-relaxed mb-4">
+            <section id="data-collection">
+              <h2>1. Data We Collect</h2>
+              <p>
                 We collect information that identifies, relates to, describes,
                 references, is capable of being associated with, or could
                 reasonably be linked, directly or indirectly, with a particular
                 consumer or device.
               </p>
-              <h3 className="text-xl font-semibold text-[#0B2140] mb-4">
-                Information You Provide
-              </h3>
-              <p className="text-[#0B2140] text-base leading-relaxed mb-4 ml-6">
-                <b className="text-[#0B2140]">Account Information:</b> Name,
-                email address, phone number, and password when you register.
+              <h4 className="">Information You Provide</h4>
+              <p className="second-text">
+                <b>Account Information:</b> Name, email address, phone number,
+                and password when you register.
               </p>
-              <p className="text-[#0B2140] text-base leading-relaxed mb-4 ml-6">
-                <b className="text-[#0B2140]">Service Details:</b> Address,
-                property type, and specific service requests when you post a
-                job.
+              <p className="second-text">
+                <b>Service Details:</b> Address, property type, and specific
+                service requests when you post a job.
               </p>
-              <p className="text-[#0B2140] text-base leading-relaxed mb-4 ml-6">
-                <b className="text-[#0B2140]">Payment Information:</b> Credit
-                card details and billing address processed by our secure payment
-                partners.
+              <p className="second-text">
+                <b>Payment Information:</b> Credit card details and billing
+                address processed by our secure payment partners.
               </p>
-              <p className="text-[#0B2140] text-base leading-relaxed mb-4 ml-6">
-                <b className="text-[#0B2140]">Communications:</b> Messages sent
-                between you and professionals through our platform.
+              <p className="second-text">
+                <b>Communications:</b> Messages sent between you and
+                professionals through our platform.
               </p>
             </section>
 
             {/* How We Use Data */}
-            <section id="how-we-use-data" className="mb-12 scroll-mt-32">
-              <h2 className="text-2xl font-semibold text-[#0B2140] mb-4">
-                Information Automatically Collected
-              </h2>
-              <p className="text-[#0B2140] text-base leading-relaxed mb-4">
+            <section id="how-we-use-data">
+              <h2>Information Automatically Collected</h2>
+              <p>
                 When you access our platform, we may automatically collect
                 specific data to improve performance and user experience:
               </p>
-              <p className="text-[#0B2140] text-base leading-relaxed mb-4 ml-6">
-                Device information (type, operating system, browser)
-              </p>
-              <p className="text-[#0B2140] text-base leading-relaxed mb-4 ml-6">
-                IP address and location data
-              </p>
-              <p className="text-[#0B2140] text-base leading-relaxed mb-4 ml-6">
-                Usage patterns and session duration
-              </p>
+              <p>Device information (type, operating system, browser)</p>
+              <p>IP address and location data</p>
+              <p>Usage patterns and session duration</p>
               <Flex
                 direction="row"
                 align="start"
                 justify="center"
                 gap="md"
-                className="p-6 bg-gradient-to-r from-[#3B82F6] to-[#2563EB] rounded-xl"
+                className="p-6 bg-gradient-to-r from-[#3B82F6] to-[#2563EB] rounded-xl info-box"
               >
                 <ShieldCheckIcon
                   size={40}
                   className="mr-1 text-white shrink-0"
                 />
-                <Flex direction="col" align="start" justify="center" gap="md">
-                  <h3 className="text-white font-normal text-base">
-                    Your Data Security
-                  </h3>
-                  <p className="text-white font-thin text-base">
+                <Flex direction="col" align="start" justify="center" gap="sm">
+                  <h4>Your Data Security</h4>
+                  <p>
                     We never sell your personal contact information to
                     third-party advertisers. Your data is only shared with
                     professionals you explicitly choose to engage with.
@@ -213,30 +194,28 @@ export default function Privacy() {
               </Flex>
             </section>
 
-            {/* Information Sharing */}
-            <section id="information-sharing" className="mb-12 scroll-mt-32">
-              <h2 className="text-2xl font-semibold text-[#0B2140] mb-4">
-                2. How We Use Your Information
-              </h2>
-              <p className="text-[#0B2140] text-base leading-relaxed mb-4">
+            {/* We Use Your Information */}
+            <section id="how-we-use-data">
+              <h2>2. How We Use Your Information</h2>
+              <p>
                 We use the collected information for the following business
                 purposes:
               </p>
-              <p className="text-[#0B2140] text-base leading-relaxed mb-4 ml-6">
+              <p>
                 To provide and maintain our Service, including monitoring the
                 usage of our Service.
               </p>
-              <p className="text-[#0B2140] text-base leading-relaxed mb-4 ml-6">
+              <p>
                 To manage your Account: to manage your registration as a user of
                 the Service.
               </p>
-              <p className="text-[#0B2140] text-base leading-relaxed mb-4 ml-6">
+              <p>
                 To contact you: To contact you by email, telephone calls, SMS,
                 or other equivalent forms of electronic communication regarding
                 updates or informative communications related to the
                 functionalities.
               </p>
-              <p className="text-[#0B2140] text-base leading-relaxed mb-4 ml-6">
+              <p>
                 To provide you with news, special offers and general information
                 about other goods, services and events which we offer that are
                 similar to those that you have already purchased or enquired
@@ -244,27 +223,25 @@ export default function Privacy() {
               </p>
             </section>
 
-            {/* Security Measures */}
-            <section id="security-measures" className="mb-12 scroll-mt-32">
-              <h2 className="text-2xl font-semibold text-[#0B2140] mb-4">
-                3. Information Sharing
-              </h2>
-              <p className="text-[#0B2140] text-base leading-relaxed mb-4">
+            {/* Information Sharing */}
+            <section id="information-sharing">
+              <h2>3. Information Sharing</h2>
+              <p>
                 We may share Your personal information in the following
                 situations:
               </p>
-              <p className="text-[#0B2140] text-base leading-relaxed mb-4">
+              <p>
                 <b className="text-[#0B2140] pr-1"> With Service Providers:</b>
                 We may share Your personal information with Service Providers to
                 monitor and analyze the use of our Service, for payment
                 processing, or to contact You.
               </p>
-              <p className="text-[#0B2140] text-base leading-relaxed mb-4">
+              <p>
                 <b className="text-[#0B2140] pr-1"> With Business Partners:</b>
                 We may share Your information with Our business partners to
                 offer You certain products, services or promotions.
               </p>
-              <p className="text-[#0B2140] text-base leading-relaxed mb-4">
+              <p>
                 <b className="text-[#0B2140] pr-1"> With other users:</b>
                 when You share personal information or otherwise interact in the
                 public areas with other users, such information may be viewed by
@@ -273,10 +250,8 @@ export default function Privacy() {
             </section>
 
             {/* FAQ */}
-            <section id="faq" className="mb-12 scroll-mt-32">
-              <h2 className="text-2xl font-semibold text-[#0B2140] mb-4">
-                Frequently Asked Questions
-              </h2>
+            <section id="faq">
+              <h2>Frequently Asked Questions</h2>
               <Accordion items={accordian} />
             </section>
           </div>
