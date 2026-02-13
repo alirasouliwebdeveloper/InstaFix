@@ -92,6 +92,7 @@ export default function LoginForm() {
 						<Flex gap="md" direction="col" align="start" justify="center">
 							<Button variant="none"
 											size="lg"
+											href="/"
 											className="text-white bg-white/25 hover:bg-white/10 self-end mb-10">
 								back to Home
 								<ArrowRightIcon className="ml-2 h-6 w-6" />
