@@ -21,6 +21,8 @@ export { DocumentIcon } from "./icons/DocumentIcon";
 export { DownloadIcon } from "./icons/DownloadIcon";
 export { DryWallIcon } from "./icons/DryWallIcon";
 export { EmailIcon } from "./icons/EmailIcon";
+export { EyeIcon } from "./icons/EyeIcon";
+export { EyeOffIcon } from "./icons/EyeOffIcon";
 export { FinalIcon } from "./icons/FinalIcon";
 export { FramingIcon } from "./icons/FramingIcon";
 export { GoogleIcon } from "./auth/GoogleIcon";
