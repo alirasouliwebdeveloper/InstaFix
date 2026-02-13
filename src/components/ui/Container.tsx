@@ -3,7 +3,7 @@ import Image, { StaticImageData } from "next/image";
 interface ContainerProps {
   children: React.ReactNode;
   className?: string;
-  size?: "sm" | "md" | "lg" | "xl" | "full";
+  size?: "sm" | "md" | "lg" | "xl" | "full" | "custom";
   bgColor?: string;
   bgImage?: StaticImageData;
   withOverlay?: boolean;
@@ -16,6 +16,7 @@ const sizeClasses = {
   lg: "max-w-7xl",
   xl: "max-w-screen-xl",
   full: "max-w-full",
+  "custom": "max-w-[1440px]"
 };
 
 export default function Container({

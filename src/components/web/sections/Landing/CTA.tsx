@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import CTA_Left from "@/assets/images/CTA_Left.png";
-import CTA_Right from "@/assets/images/CTA_Right.png";
-import CTA_Plus from "@/assets/images/CTA_Plus.png";
+import CTA_Left from "@/assets/web/images/CTA_Left.png";
+import CTA_Right from "@/assets/web/images/CTA_Right.png";
+import CTA_Plus from "@/assets/web/images/CTA_Plus.png";
 import {Section, Container, Flex} from "@/components/ui";
 
 export default function CTA() {

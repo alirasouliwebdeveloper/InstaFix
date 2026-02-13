@@ -1,13 +1,13 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Testimonial } from "@/types";
-import avatar1 from "@/assets/images/avatarImages/Avatar_Image_1.png";
-import avatar2 from "@/assets/images/avatarImages/Avatar_Image_2.png";
+import { Testimonial } from "@/types/web";
+import avatar1 from "@/assets/web/images/avatarImages/Avatar_Image_1.png";
+import avatar2 from "@/assets/web/images/avatarImages/Avatar_Image_2.png";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import "@/assets/css/swiper.css";
+import "@/assets/web/css/swiper.css";
 import { Pagination } from "swiper/modules";
 import Image from "next/image";
 import { Section, SectionTitle, Flex, Badge } from "@/components/ui";

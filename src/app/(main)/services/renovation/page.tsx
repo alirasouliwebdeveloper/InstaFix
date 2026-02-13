@@ -1,4 +1,9 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Renovation Services",
+};
 import { Badge, Button, Container, Flex, Grid, Section } from "@/components/ui";
 import {
   CheckCircleIcon,
@@ -9,8 +14,8 @@ import {
 } from "@/components/icons";
 import { IconProps } from "@/components/icons";
 import { FC } from "react";
-import renovationHeroImage from "@/assets/images/renovation-hero.png";
-import serviceImageSample from "@/assets/images/service_01.png";
+import renovationHeroImage from "@/assets/web/images/renovation-hero.png";
+import serviceImageSample from "@/assets/web/images/service_01.png";
 
 const stats = [
   { value: "$75 - $85/h", label: "Average Rate" },

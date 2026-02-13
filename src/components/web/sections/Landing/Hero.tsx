@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import heroImage from "@/assets/images/hero section.png";
+import heroImage from "@/assets/web/images/hero section.png";
 import { SearchIcon, StarFilledIcon, CheckIcon } from "@/components/icons";
-import usersImage from "@/assets/images/users.png";
+import usersImage from "@/assets/web/images/users.png";
 // Keep complex illustrative SVGs as images
-import AssistantIcon from "@/assets/images/svg/assistant.svg";
-import DotImage from "@/assets/images/svg/Hero Section Dots.svg";
+import AssistantIcon from "@/assets/web/images/svg/assistant.svg";
+import DotImage from "@/assets/web/images/svg/Hero Section Dots.svg";
 import Card from "@/components/ui/Card";
 import Link from "next/link";
 import { Button, Flex } from "@/components/ui";

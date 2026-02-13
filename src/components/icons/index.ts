@@ -4,6 +4,7 @@ export type { IconProps, IconSize } from "./Icon";
 
 // Icons - Alphabetically ordered
 export { AllServicesIcon } from "./icons/AllServicesIcon";
+export { AppleIcon } from "./auth/AppleIcon";
 export { ArrowRightIcon } from "./icons/ArrowRightIcon";
 export { ArrowUpRightIcon } from "./icons/ArrowUpRightIcon";
 export { BadgeCheckIcon } from "./icons/BadgeCheckIcon";
@@ -22,6 +23,7 @@ export { DryWallIcon } from "./icons/DryWallIcon";
 export { EmailIcon } from "./icons/EmailIcon";
 export { FinalIcon } from "./icons/FinalIcon";
 export { FramingIcon } from "./icons/FramingIcon";
+export { GoogleIcon } from "./auth/GoogleIcon";
 export { HandymanIcon } from "./icons/HandymanIcon";
 export { HeartHandIcon } from "./icons/HeartHandIcon";
 export { HomeIcon } from "./icons/HomeIcon";

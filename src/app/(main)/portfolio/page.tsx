@@ -1,10 +1,15 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Portfolio",
+};
 import {Button, Container, Grid, Section} from "@/components/ui";
 import { LocationIcon, BadgeCheckIcon } from "@/components/icons";
 
 // Placeholder project images - replace with actual images
-import Avatar1 from "@/assets/images/avatarImages/Avatar_Image_1.png";
-import Avatar2 from "@/assets/images/avatarImages/Avatar_Image_2.png";
+import Avatar1 from "@/assets/web/images/avatarImages/Avatar_Image_1.png";
+import Avatar2 from "@/assets/web/images/avatarImages/Avatar_Image_2.png";
 
 const categories = [
 	{id: "all", label: "All"},

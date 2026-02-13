@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { Article as ArticleType } from "@/types";
-import article1 from "@/assets/images/Articles/article_01.png";
-import article2 from "@/assets/images/Articles/article_02.png";
-import article3 from "@/assets/images/Articles/article_03.png";
+import { Article as ArticleType } from "@/types/web";
+import article1 from "@/assets/web/images/Articles/article_01.png";
+import article2 from "@/assets/web/images/Articles/article_02.png";
+import article3 from "@/assets/web/images/Articles/article_03.png";
 import Link from "next/link";
 import { ArrowUpRightIcon } from "@/components/icons";
 import { Section, Container, SectionTitle, Grid, Flex } from "@/components/ui";

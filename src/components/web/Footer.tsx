@@ -12,7 +12,7 @@ import SocialIcons from "@/components/ui/SocialIcons";
 import { FC } from "react";
 import { IconProps } from "@/components/icons";
 import { Container, Flex, Button, Grid } from "@/components/ui";
-import CanadImage from "@/assets/images/Canada.png";
+import CanadImage from "@/assets/web/images/Canada.png";
 
 const footerLinks = {
   Services: [

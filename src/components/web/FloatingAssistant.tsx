@@ -1,4 +1,4 @@
-import AssistantIcon from "@/assets/images/svg/assistant.svg";
+import AssistantIcon from "@/assets/web/images/svg/assistant.svg";
 
 export default function FloatingAssistant() {
   return (

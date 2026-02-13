@@ -1,8 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import NotFoundIcon from "@/assets/images/svg/404.svg";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import DotImage from "@/assets/images/svg/Hero Section Dots.svg";
+
+export const metadata: Metadata = {
+  title: "Page Not Found",
+};
+import NotFoundIcon from "@/assets/web/images/svg/404.svg";
+import Header from "@/components/web/Header";
+import Footer from "@/components/web/Footer";
+import DotImage from "@/assets/web/images/svg/Hero Section Dots.svg";
 import { Section } from "@/components/ui";
 
 export default function NotFound() {

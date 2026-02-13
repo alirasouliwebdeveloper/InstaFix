@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Accordion from "../../ui/Accordion";
+import Accordion from "@/components/ui/Accordion";
 
 const faqs = [
   {

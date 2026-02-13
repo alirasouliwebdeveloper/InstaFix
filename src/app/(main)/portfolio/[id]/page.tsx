@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import {
   Breadcrumb,
@@ -21,7 +22,11 @@ import {
 } from "@/components/icons";
 
 // Placeholder avatar
-import Avatar1 from "@/assets/images/avatarImages/Avatar_Image_1.png";
+import Avatar1 from "@/assets/web/images/avatarImages/Avatar_Image_1.png";
+
+export const metadata: Metadata = {
+  title: "Project Details",
+};
 
 // Mock project data - in real app this would come from API/database
 const project = {

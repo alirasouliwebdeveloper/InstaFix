@@ -1,4 +1,9 @@
+import type { Metadata } from "next";
 import { EmailIcon, MessageIcon, QuestionIcon } from "@/components/icons";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+};
 import { IconProps } from "@/components/icons";
 import { Button, Container, Flex, IconBox, Section } from "@/components/ui";
 import { FormGroup, Input, Label, Select, Textarea } from "@/components/form";

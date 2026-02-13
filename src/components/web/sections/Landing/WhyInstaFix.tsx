@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import white_man_hat from "@/assets/images/white-man-hat.png";
+import white_man_hat from "@/assets/web/images/white-man-hat.png";
 import { ShieldCheckIcon, LocationIcon, LockIcon } from "@/components/icons";
 import { IconProps } from "@/components/icons";
 import { Section, Container, Grid, Flex, IconBox, Button } from "@/components/ui";

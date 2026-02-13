@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Button,
   Card,
@@ -7,9 +8,13 @@ import {
   IconBox,
   Section,
 } from "@/components/ui";
+
+export const metadata: Metadata = {
+  title: "About Us",
+};
 import Image from "next/image";
-import aboutUsImage from "@/assets/images/about-us.png";
-import founderMeeting from "@/assets/images/Founder_meeting.png";
+import aboutUsImage from "@/assets/web/images/about-us.png";
+import founderMeeting from "@/assets/web/images/Founder_meeting.png";
 import {
   ShieldCheckIcon,
   HeartHandIcon,
@@ -17,10 +22,10 @@ import {
 } from "@/components/icons";
 import { IconProps } from "@/components/icons";
 import { FC } from "react";
-import teamMember1 from "@/assets/images/Team Members/Team Member 01.png";
-import teamMember2 from "@/assets/images/Team Members/Team Member 02.png";
-import teamMember3 from "@/assets/images/Team Members/Team Member 03.png";
-import teamMember4 from "@/assets/images/Team Members/Team Member 04.png";
+import teamMember1 from "@/assets/web/images/Team Members/Team Member 01.png";
+import teamMember2 from "@/assets/web/images/Team Members/Team Member 02.png";
+import teamMember3 from "@/assets/web/images/Team Members/Team Member 03.png";
+import teamMember4 from "@/assets/web/images/Team Members/Team Member 04.png";
 
 interface ValueItem {
   Icon: FC<IconProps>;

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Badge,
   Button,
@@ -24,10 +25,14 @@ import { IconProps } from "@/components/icons";
 import { FC } from "react";
 
 // Keep complex decorated stat card SVGs as images
-import happyClientSVG from "@/assets/images/svg/servicesPage/happy_clients.svg";
-import projectsCompletedSVG from "@/assets/images/svg/servicesPage/projects_completed.svg";
-import yearsOfExpSVG from "@/assets/images/svg/servicesPage/years_of_experience.svg";
-import clientSatisSVG from "@/assets/images/svg/servicesPage/client_satisfaction.svg";
+import happyClientSVG from "@/assets/web/images/svg/servicesPage/happy_clients.svg";
+import projectsCompletedSVG from "@/assets/web/images/svg/servicesPage/projects_completed.svg";
+import yearsOfExpSVG from "@/assets/web/images/svg/servicesPage/years_of_experience.svg";
+import clientSatisSVG from "@/assets/web/images/svg/servicesPage/client_satisfaction.svg";
+
+export const metadata: Metadata = {
+  title: "Services",
+};
 
 interface ServiceFeature {
   Icon: FC<IconProps>;
