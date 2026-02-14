@@ -6,6 +6,7 @@ import {Input, Label} from "@/components/form";
 interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
 	label?: string;
 	error?: string;
+	textColor?: string;
 }
 
 export default function Checkbox({
@@ -13,6 +14,7 @@ export default function Checkbox({
 																	 error,
 																	 className = "",
 																	 id,
+																	 textColor,
 																	 ...props
 																 }: CheckboxProps) {
 	return (
@@ -30,7 +32,7 @@ export default function Checkbox({
 				/>
 			</div>
 			<Label htmlFor={id} className="flex items-center gap-2 cursor-pointer">
-				{label && <span className="text-sm text-colors-primary">{label}</span>}
+				{label && <span className={`text-sm ${textColor}`}>{label}</span>}
 			</Label>
 			{error && <span className="text-red-500 text-xs mt-1">{error}</span>}
 		</Flex>

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import NewPasswordForm from "./NewPasswordForm";
+import ResetPasswordForm from "./ResetPasswordForm";
 
 export const metadata: Metadata = {
   title: "New Password",
 };
 
 export default function NewPasswordPage() {
-  return <NewPasswordForm />;
+  return <ResetPasswordForm />;
 }
