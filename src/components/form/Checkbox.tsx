@@ -19,18 +19,18 @@ export default function Checkbox({
 																 }: CheckboxProps) {
 	return (
 		<Flex direction="row" gap="sm" align="start" justify="start">
-			<div className="w-14">
-				<Input
+			<Flex direction="row" justify="center" align="start" className="w-14">
+				<input
 					type="checkbox"
 					id={id}
-					className={`h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-2 
+					className={`h-5 w-5 rounded-lg border-gray-300 text-blue-600 focus:ring-2 
 					focus:bg-gradient-to-r from-btn-primary-from to-btn-primary-to transition
 					 cursor-pointer ${
 						error ? "border-red-500" : ""
 					} ${className}`}
 					{...props}
 				/>
-			</div>
+			</Flex>
 			<Label htmlFor={id} className="flex items-center gap-2 cursor-pointer">
 				{label && <span className={`text-sm ${textColor}`}>{label}</span>}
 			</Label>
