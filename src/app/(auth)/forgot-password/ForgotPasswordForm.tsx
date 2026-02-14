@@ -1,81 +1,97 @@
 'use client';
 
 import Link from "next/link";
-import { useState } from "react";
-import Image from "next/image";
-import logo from "@/assets/images/logo.png";
+import {useState} from "react";
+import {Button, Container, Flex, Section} from "@/components/ui";
+import {FormGroup, Input, Label} from "@/components/form";
+import {ArrowRightIcon, EyeIcon, EyeOffIcon} from "@/components/icons";
 
 export default function ForgotPasswordForm() {
-  const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+	const [email, setEmail] = useState('');
+	const [submitted, setSubmitted] = useState(false);
+	const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: Implement forgot password logic
-    console.log('Forgot password:', email);
-    setSubmitted(true);
-  };
+	const handleSubmit = (e: React.FormEvent) => {
+		e.preventDefault();
+		// TODO: Implement forgot password logic
+		console.log('Forgot password:', email);
+		setSubmitted(true);
+	};
 
-  return (
-    <div className="w-full max-w-md p-8 bg-white rounded-card shadow-card">
-      <div className="flex items-center justify-center mb-4">
-        <Link href="/" className="flex items-center gap-4">
-          <Image src={logo} alt="logo" />
-        </Link>
-      </div>
-      <h1 className="text-2xl font-bold text-title mb-2 text-center">Forgot Password</h1>
-      <p className="text-text-muted text-center mb-6">
-        Enter your email to receive a reset link
-      </p>
+	return (
+		<Section spacing="none" className="w-full" bgColor="#ffffff">
+			<Container size="custom" className="xl:px-6 2xl:px-0">
+				<Flex gap="xl" align="center" justify="center" direction="row" className="w-full h-screen py-8">
+					<div className="w-full md:w-2/4 lg:w-2/5 p-4 lg:p-8 bg-white rounded-card shadow-card text-left">
+						<Flex gap="sm" direction="col" className="mb-8">
+							<h1 className="text-colors-primary text-lg sm:text-xl lg:text-2xl font-bold text-title">Reset
+								password
+							</h1>
+							<p className="text-colors-muted text-md font-normal">Enter your email address to get instructions for
+								resetting your password.</p>
+						</Flex>
+						<form onSubmit={handleSubmit} className="space-y-4 mb-5">
+							<Flex direction="col" gap="md">
+								<FormGroup width="full">
+									<Label htmlFor="email" textColor="text-colors-muted">
+										Email
+									</Label>
+									<div className="relative">
+										<Input
+											type={showPassword ? "text" : "password"}
+											name="password"
+											id="password"
+											placeholder="Please enter your Password"
+											className="pr-10"
+										/>
+										<button
+											type="button"
+											onClick={() => setShowPassword(!showPassword)}
+											className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+										>
+											{showPassword ? <EyeOffIcon className="h-5 w-5"/> : <EyeIcon className="h-5 w-5"/>}
+										</button>
+									</div>
+								</FormGroup>
+							</Flex>
+							<Button
+								type="submit"
+								variant="primary"
+								className="w-full text-md"
+							>
+								Reset password
+							</Button>
+						</form>
 
-      {!submitted ? (
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-text-secondary mb-1">
-              Email
-            </label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 rounded-input border border-border focus:outline-none focus:border-primary-500"
-              placeholder="Enter your email"
-              required
-            />
-          </div>
+						<p className="text-left text-colors-muted">
+							{`Return to`}
+							<Link href="/login" className="ml-1 text-[#3E50F7] hover:underline">
+								Login
+							</Link>
+						</p>
+					</div>
+					<div
+						className="hidden md:block md:w-2/4 lg:w-3/5 bg-gradient-to-bl
+						from-btn-primary-from to-[#00238D] min-h-full h-full overflow-hidden rounded-2xl
+							py-8 px-10
+						">
+						<Flex gap="md" direction="col" align="start" justify="center">
+							<Button variant="none"
+											size="lg"
+											href="/"
+											className="text-white bg-white/25 hover:bg-white/10 self-end mb-10">
+								back to Home
+								<ArrowRightIcon className="ml-2 h-6 w-6"/>
+							</Button>
+							<h2 className="text-white font-semibold text-2xl lg:text-4xl mb-5">Hire with Confidence.</h2>
+							<p className="text-white text-xl font-normal">Every professional is verified, reviewed, and rated by real
+								customers like you.</p>
 
-          <button
-            type="submit"
-            className="w-full py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-button hover:from-primary-600 hover:to-primary-700 transition"
-          >
-            Send Reset Link
-          </button>
-        </form>
-      ) : (
-        <div className="text-center">
-          <div className="w-16 h-16 mx-auto mb-4 bg-accent-green/10 rounded-full flex items-center justify-center">
-            <svg className="w-8 h-8 text-accent-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
-          </div>
-          <p className="text-text-secondary mb-4">
-            We've sent a reset link to <strong>{email}</strong>
-          </p>
-          <button
-            onClick={() => setSubmitted(false)}
-            className="text-primary-600 hover:underline"
-          >
-            Try another email
-          </button>
-        </div>
-      )}
+						</Flex>
+					</div>
+				</Flex>
+			</Container>
 
-      <p className="mt-6 text-center text-text-muted">
-        Remember your password?{' '}
-        <Link href="/login" className="text-primary-600 hover:underline">
-          Log In
-        </Link>
-      </p>
-    </div>
-  );
+		</Section>
+	);
 }
