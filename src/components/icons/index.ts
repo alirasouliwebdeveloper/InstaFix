@@ -17,8 +17,8 @@ export { ChevronDownIcon } from "./icons/ChevronDownIcon";
 export { ChevronRightIcon } from "./icons/ChevronRightIcon";
 export { ClipboardIcon } from "./icons/ClipboardIcon";
 export { ClockIcon } from "./icons/ClockIcon";
+export { CloseIcon } from "./icons/CloseIcon";
 export { DangerIcon } from "./icons/DangerIcon";
-export { DashboardIcon } from "./icons/DashboardIcon";
 export { DocumentIcon } from "./icons/DocumentIcon";
 export { DownloadIcon } from "./icons/DownloadIcon";
 export { DryWallIcon } from "./icons/DryWallIcon";
@@ -33,12 +33,12 @@ export { HeartHandIcon } from "./icons/HeartHandIcon";
 export { HomeIcon } from "./icons/HomeIcon";
 export { HvacIcon } from "./icons/HvacIcon";
 export { IncreaseIcon } from "./icons/IncreaseIcon";
+export { InfoCircleIcon } from "./icons/InfoCircleIcon";
 export { JobsIcon } from "./icons/JobsIcon";
 export { InstagramIcon } from "./icons/InstagramIcon";
 export { LinkedInIcon } from "./icons/LinkedInIcon";
 export { LocationIcon } from "./icons/LocationIcon";
 export { LockIcon } from "./icons/LockIcon";
-export { LogoutIcon } from "./icons/LogoutIcon";
 export { MessageIcon } from "./icons/MessageIcon";
 export { MinusIcon } from "./icons/MinusIcon";
 export { PermitIcon } from "./icons/PermitIcon";
@@ -62,3 +62,10 @@ export { VerifiedIcon } from "./icons/VerifiedIcon";
 export { WaterIcon } from "./icons/WaterIcon";
 export { XIcon } from "./icons/XIcon";
 export { YouTubeIcon } from "./icons/YouTubeIcon";
+
+// Dashboard Icons
+// export { DashboardIcon } from "./dashboard/DashboardIcon";
+export { DashboardIcon } from "./icons/DashboardIcon";
+export { LogoutIcon } from "./dashboard/LogoutIcon";
+export {SearchDashboardIcon} from "./dashboard/SearchIcon";
+
