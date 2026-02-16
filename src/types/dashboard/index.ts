@@ -62,6 +62,37 @@ export interface RoleCardProps {
 	iconColor: string;
 }
 
+// Alert
+export type AlertVariant = "info" | "warning" | "success" | "error" | "neutral";
+
+export interface AlertAction {
+	label: string;
+	onClick?: () => void;
+	href?: string;
+}
+
+export interface AlertProps {
+	variant?: AlertVariant;
+	title: string;
+	description?: string;
+	actions?: AlertAction[];
+	actionText?: string;
+	onActionClick?: () => void;
+	onClose?: () => void;
+	className?: string;
+}
+
+// Toast Alert
+export interface ToastAlert {
+	id: string;
+	variant: AlertVariant;
+	title: string;
+	description?: string;
+	actions?: AlertAction[];
+	actionText?: string;
+	duration?: number;
+}
+
 // NotificationDropdown
 export interface Notification {
 	id: string;

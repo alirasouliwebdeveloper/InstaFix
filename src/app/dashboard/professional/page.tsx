@@ -18,6 +18,7 @@ import DashboardCard from "@/components/dashboard/DashboardCard";
 import SectionHeader from "@/components/dashboard/SectionHeader";
 import StatCard from "@/components/dashboard/StatCard";
 import StarRating from "@/components/dashboard/StarRating";
+import AlertsSection from "@/components/dashboard/AlertsSection";
 
 export const metadata: Metadata = {
 	title: "Professional Dashboard - InstaFix",
@@ -79,6 +80,8 @@ export default function ProfessionalDashboardPage() {
 				actionHref="/dashboard/professional/jobs"
 				actionIcon={EyeIcon}
 			/>
+
+			<AlertsSection />
 
 			<QuickAccessGrid items={quickAccessItems}/>
 

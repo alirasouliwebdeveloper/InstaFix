@@ -13,7 +13,7 @@ import {
 	SettingsIcon,
 } from "@/components/icons";
 
-import type { UserType } from "@/types/dashboard";
+import type {UserType} from "@/types/dashboard";
 
 const customerNavItems = [
 	{label: "Dashboard", href: "/dashboard/customer", icon: DashboardIcon},
@@ -25,7 +25,7 @@ const customerNavItems = [
 
 const professionalNavItems = [
 	{label: "Dashboard", href: "/dashboard/professional", icon: DashboardIcon},
-	{label: "My Jobs", href: "/dashboard/professional/jobs", icon: JobsIcon},
+	{label: "Job Pipeline", href: "/dashboard/professional/jobs", icon: JobsIcon},
 	{label: "My Bookings", href: "/dashboard/professional/bookings", icon: BookingsIcon},
 	{label: "Messages", href: "/dashboard/professional/messages", icon: MessageIcon},
 	{label: "Profile & Settings", href: "/dashboard/professional/profile", icon: SettingsIcon},
@@ -46,18 +46,20 @@ export default function Sidebar({userType}: { userType: UserType }) {
 				{navItems.map((item) => {
 					const isActive = pathname === item.href;
 					return (
-						<Link
-							key={item.href}
-							href={item.href}
-							className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition ${
-								isActive
-									? "text-[#3E50F7] bg-blue-50"
-									: "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-							}`}
-						>
-							<item.icon className="w-5 h-5 shrink-0"/>
-							{item.label}
-						</Link>
+						<div className="flex flex-row items-center justify-start" key={item.href}>
+							{isActive ? <div className="h-full bg-[#3E50F7] w-[3px] rounded-e-2xl"/> : <div className="h-full bg-white w-[3px]"/>}
+							<Link
+								href={item.href}
+								className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition ${
+									isActive
+										? "text-[#3E50F7]"
+										: "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+								}`}
+							>
+								<item.icon className="w-5 h-5 shrink-0"/>
+								{item.label}
+							</Link>
+						</div>
 					);
 				})}
 			</nav>

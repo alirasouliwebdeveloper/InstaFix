@@ -8,6 +8,7 @@ import WelcomeHeader from "@/components/dashboard/WelcomeHeader";
 import QuickAccessGrid from "@/components/dashboard/QuickAccessGrid";
 import DashboardCard from "@/components/dashboard/DashboardCard";
 import SectionHeader from "@/components/dashboard/SectionHeader";
+import AlertsSection from "@/components/dashboard/AlertsSection";
 
 export const metadata: Metadata = {
   title: "Customer Dashboard - InstaFix",
@@ -52,6 +53,8 @@ export default function CustomerDashboardPage() {
         actionHref="/dashboard/customer/services"
         actionIcon={SearchIcon}
       />
+
+      <AlertsSection />
 
       <QuickAccessGrid items={quickAccessItems} />
 
