@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import {useState} from "react";
 import Image from "next/image";
-import { Flex } from "@/components/ui";
-import { SendIcon, AttachmentIcon } from "@/components/icons";
+import {Flex} from "@/components/ui";
+import {SendIcon, AttachmentIcon} from "@/components/icons";
 import avatar1 from "@/assets/web/images/avatarImages/Avatar_Image_2.png";
 
 interface Conversation {
@@ -82,6 +82,18 @@ const chatMessages: Message[] = [
 		time: "10:50",
 		sender: "other",
 	},
+	{
+		id: "5",
+		text: "We provide all the main materials. Just let us know if you have any specific items in mind.",
+		time: "10:51",
+		sender: "me",
+	},
+	{
+		id: "6",
+		text: "We provide all the main materials. Just let us know if you have any specific items in mind.",
+		time: "10:54",
+		sender: "other",
+	},
 ];
 
 export default function MessagesPage() {
@@ -91,45 +103,51 @@ export default function MessagesPage() {
 	const activeChat = conversations.find((c) => c.id === activeConversation);
 
 	return (
-		<div>
-			<h1 className="text-2xl font-bold text-colors-primary mb-1">Messages</h1>
-			<p className="text-sm text-gray-500 mb-6">Chat with professionals about your bookings</p>
+		<div className="">
+			<Flex gap="md" direction="col" className="bg-white p-6 border-b border-gray-200 text-colors-primary">
+				<h1 className="text-2xl font-bold  ">Messages</h1>
+				<p className="text-sm">Chat with professionals about your bookings</p>
+			</Flex>
 
-			<div className="flex h-[calc(100vh-220px)] min-h-[500px] border border-gray-200 rounded-xl overflow-hidden bg-white">
+
+			<div className="flex h-[calc(100vh-220px)] min-h-[500px] rounded-xl overflow-hidden bg-white">
 				{/* Conversations List */}
 				<div className="w-[380px] border-r border-gray-200 flex flex-col">
-					<div className="p-4 border-b border-gray-200">
-						<h3 className="text-base font-semibold text-colors-primary">Conversations</h3>
+					<div className="p-4 ">
+						<h3 className="text-base font-semibold  text-colors-primary">Conversations</h3>
 					</div>
-					<div className="flex-1 overflow-y-auto">
+					<div className="flex-1 overflow-y-auto px-3">
 						{conversations.map((conv) => (
-							<button
-								key={conv.id}
-								onClick={() => setActiveConversation(conv.id)}
-								className={`w-full text-left p-4 border-b border-gray-100 hover:bg-gray-50 transition ${
-									activeConversation === conv.id ? "bg-blue-50 border-l-2 border-l-[#3E50F7]" : ""
-								}`}
-							>
-								<Flex align="start" gap="sm">
-									<Image
-										src={conv.avatar}
-										alt={conv.name}
-										width={44}
-										height={44}
-										className="rounded-full shrink-0"
-									/>
-									<div className="flex-1 min-w-0">
-										<Flex justify="between" align="center" className="mb-0.5">
-											<h4 className="text-sm font-semibold text-colors-primary truncate">
-												{conv.name}
-											</h4>
-											<span className="text-xs text-gray-400 shrink-0 ml-2">{conv.time}</span>
-										</Flex>
-										<p className="text-xs text-gray-500 mb-1">{conv.role}</p>
-										<p className="text-sm text-gray-400 truncate">{conv.lastMessage}</p>
-									</div>
-								</Flex>
-							</button>
+							<div key={conv.id} className="py-2 first:pt-0 last:border-b-0 border-b border-b-gray-200">
+								<button
+									onClick={() => setActiveConversation(conv.id)}
+									className={`w-full text-left p-4 transition rounded-lg ${
+										activeConversation === conv.id ? "bg-[#EEF3FE] border-r-[3px] border-r-[#2563EB]" :
+											"hover:bg-gray-100 border-r-[3px] border-r-white"
+									}`}
+								>
+									<Flex align="start" gap="sm">
+										<Image
+											src={conv.avatar}
+											alt={conv.name}
+											width={44}
+											height={44}
+											className="rounded-full shrink-0"
+										/>
+										<div className="flex-1 min-w-0">
+											<Flex justify="between" align="center" className="mb-0.5">
+												<h4 className="text-sm font-semibold text-colors-primary truncate">
+													{conv.name}
+												</h4>
+												<span className="text-xs text-gray-400 shrink-0 ml-2">{conv.time}</span>
+											</Flex>
+											<p className="text-xs text-gray-500 mb-1">{conv.role}</p>
+											<p className="text-sm text-gray-400 truncate">{conv.lastMessage}</p>
+										</div>
+									</Flex>
+								</button>
+							</div>
+
 						))}
 					</div>
 				</div>
@@ -145,7 +163,7 @@ export default function MessagesPage() {
 					)}
 
 					{/* Messages */}
-					<div className="flex-1 overflow-y-auto p-6 space-y-4 bg-gray-50/50">
+					<div className="flex-1 overflow-y-auto p-3 space-y-4 bg-[#F1F1F1]">
 						{chatMessages.map((msg) => (
 							<div
 								key={msg.id}
@@ -154,7 +172,7 @@ export default function MessagesPage() {
 								<div
 									className={`max-w-[70%] px-4 py-3 rounded-2xl ${
 										msg.sender === "me"
-											? "bg-[#3E50F7] text-white rounded-br-md"
+											? "bg-[#2563EB] text-white rounded-br-md"
 											: "bg-white text-colors-primary border border-gray-200 rounded-bl-md"
 									}`}
 								>
@@ -175,7 +193,7 @@ export default function MessagesPage() {
 					<div className="p-4 border-t border-gray-200 bg-white">
 						<Flex align="center" gap="sm">
 							<button className="p-2 text-gray-400 hover:text-gray-600 transition">
-								<AttachmentIcon size="md" />
+								<AttachmentIcon size="md"/>
 							</button>
 							<input
 								type="text"
@@ -184,9 +202,11 @@ export default function MessagesPage() {
 								placeholder="What do you need?"
 								className="flex-1 px-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#3E50F7]/20 focus:border-[#3E50F7]"
 							/>
-							<button className="px-5 py-2.5 bg-[#3E50F7] text-white rounded-lg text-sm font-medium hover:bg-[#3344D9] transition flex items-center gap-2">
+							<button
+								className="px-5 py-2.5 bg-gradient-to-r from-btn-primary-from to-btn-primary-to text-white
+								rounded-lg text-sm font-light hover:bg-[#3344D9] transition flex items-center gap-2">
 								Send
-								<SendIcon size="sm" className="text-white" />
+								<SendIcon size="sm" className="text-white"/>
 							</button>
 						</Flex>
 					</div>
