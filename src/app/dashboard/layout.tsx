@@ -21,7 +21,7 @@ export default function DashboardLayout({
       <DashboardHeader userType={showNav ? userType : undefined} />
       <div className="flex flex-1 min-h-0">
         {showNav && <Sidebar userType={userType} />}
-        <main className={`flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 ${showNav ? "pb-20 lg:pb-8" : ""} bg-[#FAFAFB]`}>
+        <main className={`flex-1 overflow-y-auto p-2 sm:p-4 lg:p-0 ${showNav ? "pb-20 lg:pb-8" : "pb-0"} bg-[#FAFAFB]`}>
           {children}
         </main>
       </div>
