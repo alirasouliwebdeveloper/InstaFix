@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import { Flex, Grid, Button } from "@/components/ui";
-import DashboardCard from "@/components/dashboard/DashboardCard";
-import SectionHeader from "@/components/dashboard/SectionHeader";
 import {
 	DollarIcon,
 	ClockIcon,
@@ -90,6 +88,10 @@ const statusStyles = {
 	Processing: "text-amber-500",
 	Paid: "text-green-500",
 };
+const statusStylesBg = {
+	Processing: "bg-amber-200",
+	Paid: "bg-green-200",
+};
 
 const statusIcons = {
 	Processing: "⏳",
@@ -100,43 +102,49 @@ export default function EarningsPage() {
 	const [timeRange, setTimeRange] = useState("Last 6 Months");
 
 	return (
-		<div>
-			<h1 className="text-2xl font-bold text-colors-primary mb-6">Earnings & Payouts</h1>
+		<div className="bg-white">
+			<h1 className="text-2xl font-bold text-colors-primary p-6 border-b border-gray-200 bg-white">Earnings & Payouts</h1>
 
 			{/* Stats Cards */}
-			<Grid cols={4} gap="sm" className="mb-6">
+			<Grid cols={4} gap="sm" className="m-6">
 				{stats.map((stat) => (
-					<DashboardCard key={stat.label}>
+					<div className="bg-[#F3F6FB] p-6 rounded-lg border border-b-gray-200" key={stat.label}>
 						<Flex justify="between" align="start" className="mb-3">
 							<Flex align="center" gap="xs">
 								<stat.icon size="sm" className={stat.iconColor} />
 								<span className="text-sm text-gray-500">{stat.label}</span>
 							</Flex>
 						</Flex>
-						<p className="text-2xl font-bold text-colors-primary mb-1">{stat.value}</p>
+						<p className="text-2xl font-bold text-colors-primary mb-3">{stat.value}</p>
 						<Flex align="center" gap="xs">
 							{stat.subtitleColor === "text-green-500" && (
 								<TrendingUpIcon size={14} className="text-green-500" />
 							)}
 							<span className={`text-sm ${stat.subtitleColor}`}>{stat.subtitle}</span>
 						</Flex>
-					</DashboardCard>
+					</div>
 				))}
 			</Grid>
 
 			{/* Earnings Overview Chart */}
-			<DashboardCard className="mb-6">
-				<Flex justify="between" align="center" className="mb-8">
+			<div className="bg-[#F3F6FB] p-6 rounded-lg border border-b-gray-200 m-6">
+				<Flex justify="between" align="center" className="mb-8 relative">
 					<h2 className="text-[20px] font-semibold text-colors-primary">Earnings Overview</h2>
 					<select
 						value={timeRange}
 						onChange={(e) => setTimeRange(e.target.value)}
-						className="px-3 py-1.5 text-sm border border-gray-200 rounded-lg bg-white text-gray-600 cursor-pointer"
+						className="px-3 py-1.5 text-sm border border-gray-200 rounded-lg bg-white text-gray-600 cursor-pointer appearance-none pr-10"
+
 					>
 						<option>Last 6 Months</option>
 						<option>Last 3 Months</option>
 						<option>Last Year</option>
 					</select>
+					<svg
+						className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-colors-muted pointer-events-none"
+						fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/>
+					</svg>
 				</Flex>
 
 				{/* Chart Placeholder */}
@@ -153,11 +161,11 @@ export default function EarningsPage() {
 						</div>
 					))}
 				</div>
-			</DashboardCard>
+			</div>
 
 			{/* Payout History Table */}
-			<DashboardCard>
-				<Flex justify="between" align="center" className="mb-6">
+			<div className="bg-[#F3F6FB] p-6 rounded-lg border border-b-gray-200 m-6">
+				<Flex justify="between" align="center" className="mb-4">
 					<h2 className="text-[20px] font-semibold text-colors-primary">Payout History</h2>
 					<Button variant="outline" size="sm" className="gap-2">
 						<DownloadIcon size={14} />
@@ -179,18 +187,18 @@ export default function EarningsPage() {
 						</thead>
 						<tbody>
 							{payoutHistory.map((payout, index) => (
-								<tr key={index} className="border-b border-gray-100 hover:bg-gray-50 transition">
-									<td className="py-4 px-4 text-sm text-colors-primary">{payout.date}</td>
-									<td className="py-4 px-4 text-sm font-semibold text-colors-primary">{payout.amount}</td>
-									<td className="py-4 px-4">
+								<tr key={index} className="border-b border-gray-200 hover:bg-gray-50 last:border-b-0 transition">
+									<td className="py-4 px-4 text-sm text-colors-primary ">{payout.date}</td>
+									<td className="py-4 px-4 text-sm font-semibold text-colors-primary text-right">{payout.amount}</td>
+									<td className="py-4 px-4 ">
 										<Flex align="center" gap="sm">
 											<span className="text-gray-400">🏦</span>
 											<span className="text-sm text-colors-primary">{payout.method}</span>
 										</Flex>
 									</td>
-									<td className="py-4 px-4 text-sm text-gray-400 font-mono">{payout.referenceId}</td>
-									<td className="py-4 px-4">
-										<span className={`text-sm font-medium ${statusStyles[payout.status]}`}>
+									<td className="py-4 px-4 text-sm text-gray-400 font-mono ">{payout.referenceId}</td>
+									<td className="py-4 px-4 ">
+										<span className={`px-2 py-1 text-sm font-medium ${statusStyles[payout.status]} ${statusStylesBg[payout.status]} rounded-lg`}>
 											{statusIcons[payout.status]} {payout.status}
 										</span>
 									</td>
@@ -204,7 +212,7 @@ export default function EarningsPage() {
 						</tbody>
 					</table>
 				</div>
-			</DashboardCard>
+			</div>
 		</div>
 	);
 }
