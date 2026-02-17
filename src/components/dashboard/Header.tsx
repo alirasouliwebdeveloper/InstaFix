@@ -10,7 +10,7 @@ export default function DashboardHeader({ userType }: { userType?: "customer" | 
   const profileHref = userType ? `/dashboard/${userType}/profile` : "/dashboard";
 
   return (
-    <header className="bg-white border-b border-gray-200">
+    <header className="bg-white border-b border-gray-200 shadow-md z-10">
       <div className="flex h-16 items-center justify-between px-4 sm:px-6">
         {/* Logo */}
         <Link href="/dashboard" className="flex items-center gap-2">
